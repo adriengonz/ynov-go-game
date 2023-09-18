@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"main/menu/infocharacter"
 )
 
 type Personne struct {
@@ -13,8 +14,9 @@ type Personne struct {
 }
 
 func main() {
+
 	var perso1 Personne
-	tkt := "salut"
+	fmt.Println(Tkt)
 	perso1.race = "elf"
 	fmt.Println(perso1.race)
 
