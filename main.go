@@ -6,8 +6,8 @@ import (
 
 type Personne struct {
 	race string
-	classe string
-	vie int
+	class string
+	life int
 	mana int
-	énergie int
+	energy int
 }
