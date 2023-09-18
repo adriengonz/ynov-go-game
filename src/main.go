@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"main/menu/infocharacter"
 )
 
 type Personne struct {
