@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func menu() {
+func Menu() {
 	menu := 0
 
 	fmt.Println("1- Afficher les informations du personnage")
@@ -16,9 +16,9 @@ func menu() {
 
 	switch menu {
 	case 1:
-		displayInfo(perso1)
+		DisplayInfo(perso1)
 	case 2:
-		accessInventory(perso1)
+		AccessInventory(perso1)
 	case 3:
 		os.Exit(0)
 	}
