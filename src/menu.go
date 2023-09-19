@@ -18,7 +18,7 @@ func Menu() {
 
 	switch menu {
 	case 1:
-		DisplayInfo(perso1)
+		DisplayInfo(&perso1)
 	case 2:
 		AccessInventory(perso1)
 	case 3:
