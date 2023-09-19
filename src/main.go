@@ -3,13 +3,14 @@ package main
 import "fmt"
 
 type Personne struct {
-	name 		string
-	race 		string
-	class  		string
-	level 		int
-	maxlife   	int
+	name        string
+	race        string
+	class       string
+	level       int
+	maxlife     int
 	currentlife int
-	inventory 	[]string
+	arrows      int
+	inventory   []string
 }
 
 func GetInfoChar() {
@@ -20,18 +21,17 @@ func GetInfoChar() {
 	perso1.level = 1
 	perso1.maxlife = 100
 	perso1.currentlife = 50
-	perso1.inventory = [] string{"3 potion de soin", "50 arrows"}
+	perso1.arrows = 50
+	perso1.inventory = []string{"potion de soin"}
 	fmt.Println(perso1.name)
-    fmt.Println(perso1.race)
-    fmt.Println(perso1.class)
-    fmt.Println(perso1.level)
-    fmt.Println(perso1.maxlife)
-    fmt.Println(perso1.currentlife)
-    fmt.Println(perso1.inventory)
+	fmt.Println(perso1.race)
+	fmt.Println(perso1.class)
+	fmt.Println(perso1.level)
+	fmt.Println(perso1.maxlife)
+	fmt.Println(perso1.currentlife)
+	fmt.Println(perso1.inventory)
 }
 
 func main() {
 	GetInfoChar()
 }
-
-
