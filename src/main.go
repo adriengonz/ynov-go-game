@@ -1,6 +1,6 @@
 package main
 
-type Character struct {
+type Character struct { // Structure of Character
 	name        string
 	race        string
 	class       string
@@ -10,7 +10,7 @@ type Character struct {
 	arrows      int
 	inventory   []string
 }
-func Char() Character {
+func Char() Character { // Function that create character with his specifications
 	var perso Character
 		perso.name = "Legolas"
 		perso.race = "elf"
@@ -24,7 +24,7 @@ func Char() Character {
 }
 
 
-func main() {
+func main() { // Implementation of character in "perso" variable and start program with Menu function
 	perso := Char()
 	Menu(&perso)
 }
