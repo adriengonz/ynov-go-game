@@ -1,5 +1,5 @@
 package main
-
+/*
 import (
 	"fmt"
 )
@@ -15,3 +15,4 @@ func AccessInventory() { // Function for access inventory content
 	}
 	Menu()
 }
+*/

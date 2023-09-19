@@ -5,8 +5,8 @@ import (
 	"os"
 )
 
-func Menu() {
-	menu := 0
+func Menu(persovar *Character) {
+	menuinput := 0
 	fmt.Println("Menu:")
 	fmt.Println("1- Afficher les informations du personnage")
 	fmt.Println('\n')
@@ -15,14 +15,18 @@ func Menu() {
 	fmt.Println("3- Utiliser une potion de soin")
 	fmt.Println('\n')
 	fmt.Println("4- Quitter")
+	fmt.Println('\n')
+	fmt.Println("Votre choix ?")
+	fmt.Scan(&menuinput)
 
-	switch menu {
+	switch menuinput {
 	case 1:
-		DisplayInfo(&perso1)
+		DisplayInfo(persovar)
 	case 2:
-		AccessInventory(perso1)
+		os.Exit(0)
+		///AccessInventory()
 	case 3:
-		TakePot()
+		os.Exit(0)
 	case 4:
 		os.Exit(0)
 	}

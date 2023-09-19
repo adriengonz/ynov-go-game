@@ -1,8 +1,6 @@
 package main
 
-import "fmt"
-
-type Personne struct {
+type Character struct {
 	name        string
 	race        string
 	class       string
@@ -12,26 +10,21 @@ type Personne struct {
 	arrows      int
 	inventory   []string
 }
-
-func GetInfoChar() {
-	var perso1 Personne
-	perso1.name = "Legolas"
-	perso1.race = "elf"
-	perso1.class = "archer"
-	perso1.level = 1
-	perso1.maxlife = 100
-	perso1.currentlife = 50
-	perso1.arrows = 50
-	perso1.inventory = []string{"potion de soin"}
-	fmt.Println(perso1.name)
-	fmt.Println(perso1.race)
-	fmt.Println(perso1.class)
-	fmt.Println(perso1.level)
-	fmt.Println(perso1.maxlife)
-	fmt.Println(perso1.currentlife)
-	fmt.Println(perso1.inventory)
+func Char() Character {
+	var perso Character
+		perso.name = "Legolas"
+		perso.race = "elf"
+		perso.class = "archer"
+		perso.level = 1
+		perso.maxlife = 100
+		perso.currentlife = 50
+		perso.arrows = 50
+		perso.inventory = []string{"potion de soin"}
+	return perso
 }
 
+
 func main() {
-	GetInfoChar()
+	perso := Char()
+	Menu(&perso)
 }
