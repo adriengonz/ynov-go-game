@@ -23,8 +23,7 @@ func Menu(persovar *Character) {
 	case 1:
 		DisplayInfo(persovar)
 	case 2:
-		os.Exit(0)
-		///AccessInventory()
+		AccessInventory(persovar)
 	case 3:
 		os.Exit(0)
 	case 4:

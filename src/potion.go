@@ -1,5 +1,4 @@
 package main
-
 /*
 import(
 	"fmt"
@@ -15,5 +14,4 @@ func TakePot() {
 	if index == nil {
 		fmt.Println()
 	}
-}
-*/
+}*/
