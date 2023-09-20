@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func TakePot(perso *Character) {
@@ -13,9 +14,11 @@ func TakePot(perso *Character) {
             }
             perso.inventory = append(perso.inventory[:i], perso.inventory[i+1:]...)
 			fmt.Println("Vous avez utilisé une potion de soin, votre santé est mainteant de", perso.currentlife)
+			time.Sleep(2 * time.Second)
 			Menu(perso)
 		}
 	}
 	fmt.Println("Vous n'avez aucune potion dans votre inventaire !")
+	time.Sleep(2 * time.Second)
 	Menu(perso)
 }
