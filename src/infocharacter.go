@@ -19,3 +19,11 @@ func DisplayInfo(perso *Character) { // Function that prints specs about the cha
 	}
 	Menu(perso)
 }
+
+func Dead(perso *Character) {
+	if perso.currentlife == 0 {
+		fmt.Println("You are dead")
+		perso.currentlife = perso.maxlife / 2
+		fmt.Println("Vous venez de ressucité avec la moitié de vos points de vies")
+	}
+}

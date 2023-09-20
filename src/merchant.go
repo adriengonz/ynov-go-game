@@ -19,7 +19,7 @@ func Merchant(perso *Character) {
 		AddInventory(perso, "potion de soin")
 		Menu(perso)
 	case 2:
-		//(perso, "potion de poison")
+		Dead(perso)
 	case 3:
 		//(perso, "Livre de sort: boule de feu")
 	case 4:
