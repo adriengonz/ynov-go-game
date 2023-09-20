@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func DisplayInfo(perso *Character) {
+func DisplayInfo(perso *Character) { // Function that prints specs about the character
 	fmt.Println("Nom :", perso.name)
 	fmt.Println("Race :", perso.race)
 	fmt.Println("Classe :", perso.class)

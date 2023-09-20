@@ -14,7 +14,7 @@ func TakePot(perso *Character) { // Add health to character and remove the potio
 		fmt.Println("Vous avez utilisé une potion de soin, votre santé est mainteant de", perso.currentlife)
 		time.Sleep(2 * time.Second)
 		Menu(perso)
-	} else {
+	} else { // If RemoveInventory return false (so character doesn't have potion in his inventory)
 		fmt.Println("Vous n'avez aucune potion dans votre inventaire !")
 		time.Sleep(2 * time.Second)
 		Menu(perso)
