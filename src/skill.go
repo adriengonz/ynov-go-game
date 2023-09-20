@@ -5,14 +5,15 @@ import(
 	"time"
 )
 
-func Spellbook(perso *Character, sort string) {
-	for _, skillverif := range perso.skill {
-		if skillverif == sort {
-            fmt.Println(sort, "est déjà dans votre liste de skills !")
+func Spellbook(perso *Character, sortbook string) {
+	newsortname := sortbook[:8]
+	for _, skillverif := range perso.skill { // Check if sort is already in skills slice
+		if skillverif == newsortname {
+            fmt.Println(newsortname, "est déjà dans votre liste de skills !")
 			Menu(perso)
 		}
 	}
-	perso.skill = append(perso.skill, sort)
-	fmt.Println(sort, "a bien été ajouté à vos skills")
+	perso.skill = append(perso.skill, newsortname) // Append sort in skills slice
+	fmt.Println(newsortname, "a bien été ajouté à vos skills")
 	time.Sleep(2 * time.Second)
 }
