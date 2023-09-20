@@ -21,7 +21,8 @@ func Merchant(perso *Character) {
 		AddInventory(perso, "potion de poison")
 		Menu(perso)
 	case 3:
-		//(perso, "Livre de sort: boule de feu")
+		AddInventory(perso, "Livre de sort: boule de feu")
+		Menu(perso)
 	case 4:
 		Menu(perso)
 	}
