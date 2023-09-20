@@ -4,8 +4,8 @@ type skill int
 
 const (
     boule_de_feu skill = iota
-    éclaire_de_givre skill = iota
-    Projectil_des_arcanes skill = iota
+    éclaire_de_givre
+    Projectil_des_arcanes
 )
 
 type Character struct { // Structure of Character
@@ -15,7 +15,7 @@ type Character struct { // Structure of Character
 	level       int
 	maxlife     int
 	currentlife int
-	arrows      int
+	arrow		int
 	inventory   []string
 	skill       []string
 }
@@ -27,9 +27,9 @@ func Char() Character { // Function that create character with his specification
 		perso.level = 1
 		perso.maxlife = 100
 		perso.currentlife = 50
-		perso.arrows = 50
+		perso.arrow = 50
 		perso.inventory = []string{"potion de soin"}
-		perso.skill = []string Character.skill
+		perso.skill = []string {"boule de feu", "/" ,"éclaire de givre", "/" , "Projectil des arcanes"}
 	return perso
 }
 

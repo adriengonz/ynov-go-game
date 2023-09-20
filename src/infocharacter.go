@@ -9,7 +9,8 @@ func DisplayInfo(perso *Character) { // Function that prints specs about the cha
 	fmt.Println("Niveau :", perso.level)
 	fmt.Println("Niveau de vie max :", perso.maxlife)
 	fmt.Println("Niveau de vie actuel :", perso.currentlife)
-	fmt.Println("Flèches restantes :", perso.arrows)
+	fmt.Println("Nombre de flèche :", perso.arrow)
+	fmt.Println("Sort utilisable :", perso.skill)
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	var userinputinfo int
 	fmt.Scan(&userinputinfo)
