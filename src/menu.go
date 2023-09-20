@@ -14,12 +14,14 @@ func Menu(persovar *Character) { // Function that prints the menu of game, who t
 	fmt.Println('\n')
 	fmt.Println("3- Utiliser une potion de soin")
 	fmt.Println('\n')
-	fmt.Println("4- Quitter")
+	fmt.Println("4- Marchand")
+	fmt.Println('\n')
+	fmt.Println("5- Quitter")
 	fmt.Println('\n')
 	fmt.Println("Votre choix ?")
 	fmt.Scan(&menuinput)
 
-	switch menuinput { // Menu in switch case form, permit to execute functions 
+	switch menuinput { // Menu in switch case form, permit to execute functions
 	case 1:
 		DisplayInfo(persovar)
 	case 2:
@@ -27,6 +29,8 @@ func Menu(persovar *Character) { // Function that prints the menu of game, who t
 	case 3:
 		TakePot(persovar)
 	case 4:
+		os.Exit(0)
+	case 5:
 		os.Exit(0)
 	}
 }
