@@ -29,7 +29,7 @@ func Menu(persovar *Character) { // Function that prints the menu of game, who t
 	case 3:
 		TakePot(persovar)
 	case 4:
-		os.Exit(0)
+		Marchand(persovar)
 	case 5:
 		os.Exit(0)
 	}
