@@ -23,6 +23,6 @@ func Merchant(perso *Character) {
 	case 3:
 		//(perso, "Livre de sort: boule de feu")
 	case 4:
-		os.Exit(0)
+		Menu(perso)
 	}
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func AccessInventory(perso *Character) { // Function for access inventory content
@@ -19,6 +20,7 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 func AddInventory(perso *Character, item string) { // Function that add the idem variable to player inventory
 	perso.inventory = append(perso.inventory, item)
 	fmt.Println(item, "a bien été ajoutée à votre inventaire")
+	time.Sleep(2 * time.Second)
 }
 
 func RemoveInventory(perso *Character, itemname string) bool { // Function that remove the item variable from the player inventory
