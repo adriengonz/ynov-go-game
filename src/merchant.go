@@ -17,6 +17,7 @@ func Merchant(perso *Character) {
 	switch menumerchant { // Menu of merchant in switch case form, permit to execute functions
 	case 1:
 		AddInventory(perso, "potion de soin")
+		Menu(perso)
 	case 2:
 		//(perso, "potion de poison")
 	case 3:
