@@ -15,3 +15,17 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 	}
 	Menu(perso)
 }
+
+func AddInventory(perso *Character, item string) { // Function that add the idem variable to player inventory
+	perso.inventory = append(perso.inventory, item)
+}
+
+func RemoveInventory(perso *Character, itemname string) bool {
+	for i, itempicker := range perso.inventory { // Function that remove the item variable from the player inventory
+		if itempicker == itemname {
+            perso.inventory = append(perso.inventory[:i], perso.inventory[i+1:]...)
+			return true
+		}
+	}
+	return false
+}
