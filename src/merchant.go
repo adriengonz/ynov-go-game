@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func Merchant(perso *Character) {
@@ -19,7 +18,8 @@ func Merchant(perso *Character) {
 		AddInventory(perso, "potion de soin")
 		Menu(perso)
 	case 2:
-		Dead(perso)
+		AddInventory(perso, "potion de poison")
+		Menu(perso)
 	case 3:
 		//(perso, "Livre de sort: boule de feu")
 	case 4:
