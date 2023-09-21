@@ -37,10 +37,19 @@ func RemoveInventory(perso *Character, itemname string) bool { // Function that 
 	return false
 }
 
-func LimitItem(perso *Character) bool {
+func LimitItem(perso *Character) bool { // Function that check if limit of inventory is reached
 	if len(perso.inventory) >= 10 {
 		return true
 	} else {
 		return false
 	}
+}
+
+func CheckItemInventory(perso *Character, itemname string) bool { // Fucntion that check if item is in inventory
+	for _, itempicker := range perso.inventory { 
+		if itempicker == itemname {
+			return true
+		}
+	}
+	return false
 }
