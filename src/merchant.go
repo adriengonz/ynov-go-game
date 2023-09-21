@@ -27,6 +27,22 @@ func Merchant(perso *Character) {
 		perso.money -= 25
 		Menu(perso)
 	case 4:
+		AddInventory(perso, "fourrure de loup")
+		perso.money -= 4
+		Menu(perso)
+	case 5:
+		AddInventory(perso, "peau de Troll")
+		perso.money -= 7
+		Menu(perso)
+	case 6:
+		AddInventory(perso, "cuir de sanglier")
+		perso.money -= 3
+		Menu(perso)
+	case 7:
+		AddInventory(perso, "plume de Corbeau")
+		perso.money -= 1
+		Menu(perso)
+	case 8:
 		Menu(perso)
 	}
 }
