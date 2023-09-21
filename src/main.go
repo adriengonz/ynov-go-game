@@ -28,21 +28,20 @@ type Character struct { // Structure of Character
 	arrow		int
 	inventory   []string
 	skill       []string
+	money		int
 }
 func Char() Character { // Function that create character with his specifications
 	var perso Character
-		fmt.Println("Quel est votre nom ?")
-		fmt.Scan(perso.name)
-		fmt.Println("Quel est votre race ?")
-		fmt.Scan(perso.race)
-		fmt.Println("Quel est votre classe ?")
-		fmt.Scan(perso.class)
+		perso.name = "Legolas"
+		perso.race = "elf"
+		perso.class = "mage"
 		perso.level = 1
 		perso.maxlife = 100
 		perso.currentlife = 50
 		perso.arrow = 50
 		perso.inventory = []string{"potion de soin"}
 		perso.skill = []string {"boule de feu", "/" ,"éclaire de givre", "/" , "Projectil des arcanes"}
+		perso.money = 100
 	return perso
 }
 
