@@ -32,3 +32,12 @@ func RemoveInventory(perso *Character, itemname string) bool { // Function that 
 	}
 	return false
 }
+
+func LimitItem(perso *Character) {
+	if len(perso.inventory) >= 10 {
+		return true
+	} else {
+		return false
+	}
+
+}
