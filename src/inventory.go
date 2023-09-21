@@ -18,9 +18,13 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 }
 
 func AddInventory(perso *Character, item string) { // Function that add the idem variable to player inventory
-	perso.inventory = append(perso.inventory, item)
-	fmt.Println(item, "a bien été ajoutée à votre inventaire")
-	time.Sleep(2 * time.Second)
+	if LimitItem(perso) {
+		fmt.Println("L'item ne peut pas être ajouté a votre inventaire car il est plein !")
+	} else {
+		perso.inventory = append(perso.inventory, item)
+		fmt.Println(item, "a bien été ajoutée à votre inventaire")
+		time.Sleep(2 * time.Second)
+	}
 }
 
 func RemoveInventory(perso *Character, itemname string) bool { // Function that remove the item variable from the player inventory
@@ -33,11 +37,10 @@ func RemoveInventory(perso *Character, itemname string) bool { // Function that 
 	return false
 }
 
-func LimitItem(perso *Character) {
+func LimitItem(perso *Character) bool {
 	if len(perso.inventory) >= 10 {
 		return true
 	} else {
 		return false
 	}
-
 }
