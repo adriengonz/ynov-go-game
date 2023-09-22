@@ -9,8 +9,9 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 	menuinventory := 0
 	fmt.Println("Voici votre inventaire")
 	fmt.Println(perso.inventory)
-	fmt.Println("Tapez 1 pour prendre une potion de soin")
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
+	fmt.Println("Tapez 1 pour prendre une potion de soin")
+	fmt.Println("Tapez 2 pour apprendre un sort")
 	fmt.Scan(&menuinventory)
 
 	switch menuinventory { // Menu in switch case form, permit to execute functions
@@ -19,7 +20,7 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 	case 1:
 		TakePot(perso)
 	case 2:
-		
+		Spellbook(perso, "livre de boule de feu")
 	}
 	var userinput int
 	fmt.Scan(&userinput)
