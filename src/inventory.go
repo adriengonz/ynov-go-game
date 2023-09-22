@@ -52,7 +52,7 @@ func RemoveInventory(perso *Character, itemname string) bool { // Function that 
 }
 
 func LimitItem(perso *Character) bool { // Function that check if limit of inventory is reached
-	if len(perso.inventory) >= 10 {
+	if len(perso.inventory) >= perso.limitInventory {
 		return true
 	} else {
 		return false
@@ -68,5 +68,11 @@ func CheckItemInventory(perso *Character, itemname string) bool { // Function th
 	return false
 }
 
-func upgradeInventorySlot(perso *Character) {
+func UpgradeInventorySlot(perso *Character) {
+	counter := 0
+	if counter <= 2 {
+		perso.limitInventory += 10
+	} else {
+		fmt.Println("Vous ne pouvez pas améliorer plus de 3 fois votre inventaire !")
+	}
 }
