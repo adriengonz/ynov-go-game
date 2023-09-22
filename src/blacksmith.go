@@ -16,48 +16,53 @@ func Blacksmith(perso *Character) {
 
 	switch menublacksmith { // Menu in switch case form, permit to craft elements with blacksmith
 	case 1:
-		if CheckBlacksmith(perso, "plume de corbeau", "cuir de sanglier", 5) {
-			RemoveInventory(perso, "plume de corbeau")
-			RemoveInventory(perso, "cuir de sanglier")
-			perso.money -= 5
-			AddInventory(perso, "chapeau de l'aventurier")
-			fmt.Println("Vous avez fabriqué un chapeau de l'aventurier, il est désormais ajouté a votre inventaire")
-			time.Sleep(2 * time.Second)
-			Blacksmith(perso)
+		if CheckBlacksmith(perso, "plume de corbeau", 5) {
+			if CheckBlacksmith(perso, "cuir de sanglier", 5) {
+				RemoveInventory(perso, "plume de corbeau")
+				RemoveInventory(perso, "cuir de sanglier")
+				perso.money -= 5
+				AddInventory(perso, "chapeau de l'aventurier")
+				fmt.Println("Vous avez fabriqué un chapeau de l'aventurier, il est désormais ajouté a votre inventaire")
+				time.Sleep(2 * time.Second)
+				Blacksmith(perso)
+			}
 		}
+
 	case 2:
-		if CheckBlacksmith(perso, "plume de corbeau", "cuir de sanglier", 5) {
-			RemoveInventory(perso, "plume de corbeau")
-			RemoveInventory(perso, "cuir de sanglier")
-			perso.money -= 5
-			AddInventory(perso, "tunique de l’aventurier")
-			fmt.Println("Vous avez fabriqué une tunique de l'aventurier, il est désormais ajouté a votre inventaire")
-			time.Sleep(2 * time.Second)
-			Blacksmith(perso)
+		if CheckBlacksmith(perso, "fourrure de loup", 5) {
+			if CheckBlacksmith(perso, "fourrure de loup", 5){
+				if CheckBlacksmith(perso, "peau de troll", 5) {
+					RemoveInventory(perso, "plume de corbeau")
+					RemoveInventory(perso, "cuir de sanglier")
+					perso.money -= 5
+					AddInventory(perso, "tunique de l’aventurier")
+					fmt.Println("Vous avez fabriqué une tunique de l'aventurier, il est désormais ajouté a votre inventaire")
+					time.Sleep(2 * time.Second)
+					Blacksmith(perso)
+				}
+			}
 		}
 
 	case 3:
-		if CheckBlacksmith(perso, "fourrure de loup", "cuir de sanglier", 5) {
-			RemoveInventory(perso, "fourrure de loup")
-			RemoveInventory(perso, "cuir de sanglier")
-			perso.money -= 5
-			AddInventory(perso, "bottes de l’aventurier")
-			fmt.Println("Vous avez fabriqué des bottes de l'aventurier, il est désormais ajouté a votre inventaire")
-			time.Sleep(2 * time.Second)
-			Blacksmith(perso)
+		if CheckBlacksmith(perso, "fourrure de loup", 5) {
+			if CheckBlacksmith(perso, "cuir de sanglier", 5) {
+				RemoveInventory(perso, "fourrure de loup")
+				RemoveInventory(perso, "cuir de sanglier")
+				perso.money -= 5
+				AddInventory(perso, "bottes de l’aventurier")
+				fmt.Println("Vous avez fabriqué des bottes de l'aventurier, il est désormais ajouté a votre inventaire")
+				time.Sleep(2 * time.Second)
+				Blacksmith(perso)
+			}
 		}
+
 	case 4:
-		
-	case 5:
-		
-	case 6:
 		Menu(perso)
 	}
 }
 
-func CheckBlacksmith(perso *Character, item1 string, item2 string, moneyneeded int) bool {
+func CheckBlacksmith(perso *Character, item1 string, moneyneeded int) bool { // Function that check if item is in inventory, and if character has sufficent money for craft items
 	if CheckItemInventory(perso, item1) {
-		if CheckItemInventory(perso, item2) {
 			if perso.money > moneyneeded {
 				return true
 			} else { 
@@ -66,12 +71,6 @@ func CheckBlacksmith(perso *Character, item1 string, item2 string, moneyneeded i
 				Blacksmith(perso)
 				return false
 			}
-		} else {
-			fmt.Println("Vous n'avez pas de", item2, "dans votre inventaire !")
-			time.Sleep(2 * time.Second)
-			Blacksmith(perso)
-			return false
-		}
 	} else {
 		fmt.Println("Vous n'avez pas de", item1, "dans votre inventaire !")
 		time.Sleep(2 * time.Second)
