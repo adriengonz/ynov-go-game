@@ -28,6 +28,13 @@ type Character struct { // Structure of Character
 	skill       []string
 	money		int
 }
+
+type Equipment struct { // Structure of Equipment
+	head 		[]string
+	torso       []string
+	foot		[]string
+}
+
 func Char() Character { // Function that create character with his specifications
 	var perso Character
 		perso.name = "Legolas"
@@ -43,8 +50,16 @@ func Char() Character { // Function that create character with his specification
 	return perso
 }
 
+func stuf() Equipment {
+    var stuff Equipment
+    stuff.head = []string{"Emplacement du casque"}
+    stuff.torso = []string{"Emplacement du torse"}
+    stuff.foot = []string{"Emplacement des bottes"}
+    return stuff
+}
 
 func main() { // Implementation of character in "perso" variable and start program with Menu function
-	perso := Char()
-	Menu(&perso)
+    perso := Char()
+    stuff := stuf()
+    Menu(&perso)
 }
