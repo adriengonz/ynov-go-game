@@ -8,12 +8,12 @@ import (
 func Menu(persovar *Character) { // Function that prints the menu of game, who takes in argument "persovar" in pointer, who appoint the character structure
 	menuinput := 0
 	fmt.Println("Menu:")
-	fmt.Println("1- Afficher les informations du personnage")
-	fmt.Println("2- Accéder au contenu de l’inventaire")
-	fmt.Println("3- Marchand")
-	fmt.Println("4- Forgeron")
-	fmt.Println("5- Quitter")
-	fmt.Println("Votre choix ?")
+	fmt.Println("1- Show character information")
+	fmt.Println("2- Access inventory content")
+	fmt.Println("3- Merchant")
+	fmt.Println("4- Blacksmith")
+	fmt.Println("5- Leave")
+	fmt.Println("Your choice ?")
 	fmt.Scan(&menuinput)
 
 	switch menuinput { // Menu in switch case form, permit to execute functions

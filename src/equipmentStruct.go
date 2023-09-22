@@ -7,7 +7,7 @@ type Equipment struct { // Structure of Equipment
 }
 
 func (stuff *Equipment) Init(head []string, torso []string, foot []string) {
-	stuff.head = []string{"Emplacement du casque"}
-	stuff.torso = []string{"Emplacement du torse"}
-	stuff.foot = []string{"Emplacement des bottes"}
+	stuff.head = []string{"Headset location"}
+	stuff.torso = []string{"Torso location"}
+	stuff.foot = []string{"Boot Location"}
 }
