@@ -21,8 +21,9 @@ func Blacksmith(perso *Character) {
 				RemoveInventory(perso, "plume de corbeau")
 				RemoveInventory(perso, "cuir de sanglier")
 				perso.money -= 5
-				AddInventory(perso, "chapeau de l'aventurier")
-				fmt.Println("Vous avez fabriqué un chapeau de l'aventurier, il est désormais ajouté a votre inventaire")
+				perso.equipment.head = []string{"chapeau de l'aventurier"}
+				perso.maxlife += 10
+				fmt.Println("Vous avez fabriqué un chapeau de l'aventurier, il est désormais ajouté a votre équipement")
 				time.Sleep(2 * time.Second)
 				Blacksmith(perso)
 			}
@@ -35,7 +36,8 @@ func Blacksmith(perso *Character) {
 					RemoveInventory(perso, "plume de corbeau")
 					RemoveInventory(perso, "cuir de sanglier")
 					perso.money -= 5
-					AddInventory(perso, "tunique de l’aventurier")
+					perso.equipment.torso = []string{"tunique de l'aventurier"}
+					perso.maxlife += 25
 					fmt.Println("Vous avez fabriqué une tunique de l'aventurier, il est désormais ajouté a votre inventaire")
 					time.Sleep(2 * time.Second)
 					Blacksmith(perso)
@@ -49,7 +51,8 @@ func Blacksmith(perso *Character) {
 				RemoveInventory(perso, "fourrure de loup")
 				RemoveInventory(perso, "cuir de sanglier")
 				perso.money -= 5
-				AddInventory(perso, "bottes de l’aventurier")
+				perso.equipment.foot = []string{"bottes de l'aventurier"}
+				perso.maxlife += 15
 				fmt.Println("Vous avez fabriqué des bottes de l'aventurier, il est désormais ajouté a votre inventaire")
 				time.Sleep(2 * time.Second)
 				Blacksmith(perso)

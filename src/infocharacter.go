@@ -11,6 +11,7 @@ func DisplayInfo(perso *Character) { // Function that prints specs about the cha
 	fmt.Println("Niveau de vie actuel :", perso.currentlife)
 	fmt.Println("Sort utilisable :", perso.skill)
 	fmt.Println("Argent :", perso.money)
+	fmt.Println("Equipement :", perso.equipment)
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	var userinputinfo int
 	fmt.Scan(&userinputinfo)
