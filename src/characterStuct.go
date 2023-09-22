@@ -11,8 +11,7 @@ const (
 type skill int
 
 const (
-    boule_de_feu skill = iota
-    éclaire_de_givre
+    éclaire_de_givre skill = iota
     Projectil_des_arcanes
 )
 
@@ -23,16 +22,19 @@ type Character struct { // Structure of Character
 	level       int
 	maxlife     int
 	currentlife int
-	arrow       int
 	inventory   []string
 	skill       []string
 	money       int
 }
 
-func (p *Character) Init(name string, race string, class string, maxlife int, currentlife int) {
+func (p *Character) Init(name string, race string, class string, level int, maxlife int, currentlife int, inventory []string, skill []string, money int) {
 	p.name = name
 	p.race = race
 	p.class = class
+	p.level = level
 	p.maxlife = maxlife
 	p.currentlife = currentlife
+	p.inventory = inventory
+	p.skill = skill
+	p.money = money
 }
