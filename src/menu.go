@@ -10,10 +10,9 @@ func Menu(persovar *Character) { // Function that prints the menu of game, who t
 	fmt.Println("Menu:")
 	fmt.Println("1- Afficher les informations du personnage")
 	fmt.Println("2- Accéder au contenu de l’inventaire")
-	fmt.Println("3- Utiliser une potion de soin")
-	fmt.Println("4- Marchand")
-	fmt.Println("5- Forgeron")
-	fmt.Println("6- Quitter")
+	fmt.Println("3- Marchand")
+	fmt.Println("4- Forgeron")
+	fmt.Println("5- Quitter")
 	fmt.Println("Votre choix ?")
 	fmt.Scan(&menuinput)
 
@@ -23,12 +22,10 @@ func Menu(persovar *Character) { // Function that prints the menu of game, who t
 	case 2:
 		AccessInventory(persovar)
 	case 3:
-		TakePot(persovar)
-	case 4:
 		Merchant(persovar)
-	case 5:
+	case 4:
 		Blacksmith(persovar)
-	case 6:
+	case 5:
 		os.Exit(0)
 	}
 }

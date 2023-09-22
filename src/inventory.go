@@ -6,8 +6,21 @@ import (
 )
 
 func AccessInventory(perso *Character) { // Function for access inventory content
+	menuinventory := 0
+	fmt.Println("Voici votre inventaire")
 	fmt.Println(perso.inventory)
+	fmt.Println("Tapez 1 pour prendre une potion de soin")
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
+	fmt.Scan(&menuinventory)
+
+	switch menuinventory { // Menu in switch case form, permit to execute functions
+	case 0:
+		Menu(perso)
+	case 1:
+		TakePot(perso)
+	case 2:
+		
+	}
 	var userinput int
 	fmt.Scan(&userinput)
 	for userinput != 0 { // While userinput is not 0, repeat the user input
