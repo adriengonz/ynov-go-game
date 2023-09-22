@@ -45,7 +45,7 @@ func LimitItem(perso *Character) bool { // Function that check if limit of inven
 	}
 }
 
-func CheckItemInventory(perso *Character, itemname string) bool { // Fucntion that check if item is in inventory
+func CheckItemInventory(perso *Character, itemname string) bool { // Function that check if item is in inventory
 	for _, itempicker := range perso.inventory { 
 		if itempicker == itemname {
 			return true
