@@ -5,17 +5,17 @@ import "fmt"
 func DisplayInfo(perso *Character) { // Function that prints specs about the character
 	fmt.Println("Nom :", perso.name)
 	fmt.Println("Race :", perso.race)
-	fmt.Println("Class :", perso.class)
-	fmt.Println("Level :", perso.level)
-	fmt.Println("Max standard of living :", perso.maxlife)
-	fmt.Println("Current standard of living :", perso.currentlife)
-	fmt.Println("Usable spell:", perso.skill)
-	fmt.Println("Money :", perso.money)
-	fmt.Println("Type 0 to return to the previous menu")
+	fmt.Println("Classe :", perso.class)
+	fmt.Println("Niveau :", perso.level)
+	fmt.Println("Niveau de vie max :", perso.maxlife)
+	fmt.Println("Niveau de vie actuel :", perso.currentlife)
+	fmt.Println("Sort utilisable :", perso.skill)
+	fmt.Println("Argent :", perso.money)
+	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	var userinputinfo int
 	fmt.Scan(&userinputinfo)
 	for userinputinfo != 0 { // While userinput is not 0, repeat the user input
-		fmt.Println("Your order was not recognized, type 0 to return to the previous menu")
+		fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 		fmt.Scan(&userinputinfo)
 	}
 	Menu(perso)
@@ -25,6 +25,6 @@ func Dead(perso *Character) { // Function that check if character is dead
 	if perso.currentlife == 0 {
 		fmt.Println("You are dead")
 		perso.currentlife = perso.maxlife / 2
-		fmt.Println("You have just been resurrected with half your life points")
+		fmt.Println("Vous venez de ressuciter avec la moitié de vos points de vies")
 	}
 }

@@ -7,11 +7,11 @@ import (
 
 func AccessInventory(perso *Character) { // Function for access inventory content
 	menuinventory := 0
-	fmt.Println("Here is your inventory")
+	fmt.Println("Voici votre inventaire")
 	fmt.Println(perso.inventory)
-	fmt.Println("Type 0 to return to the previous menu")
-	fmt.Println("Type 1 to take a healing potion")
-	fmt.Println("Type 2 to learn a spell")
+	fmt.Println("Tapez 0 pour revenir au menu précedent")
+	fmt.Println("Tapez 1 pour prendre une potion de soin")
+	fmt.Println("Tapez 2 pour apprendre un sort")
 	fmt.Scan(&menuinventory)
 
 	switch menuinventory { // Menu in switch case form, permit to execute functions
@@ -20,12 +20,12 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 	case 1:
 		TakePot(perso)
 	case 2:
-		Spellbook(perso, "fireball book")
+		Spellbook(perso, "livre de boule de feu")
 	}
 	var userinput int
 	fmt.Scan(&userinput)
 	for userinput != 0 { // While userinput is not 0, repeat the user input
-		fmt.Println("Your order was not recognized, type 0 to return to the previous menu")
+		fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 		fmt.Scan(&userinput)
 	}
 	Menu(perso)
@@ -33,10 +33,10 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 
 func AddInventory(perso *Character, item string) { // Function that add the idem variable to player inventory
 	if LimitItem(perso) {
-		fmt.Println("The item cannot be added to your inventory because it is full!")
+		fmt.Println("L'item ne peut pas être ajouté a votre inventaire car il est plein !")
 	} else {
 		perso.inventory = append(perso.inventory, item)
-		fmt.Println(item, "has been added to your inventory")
+		fmt.Println(item, "a bien été ajoutée à votre inventaire")
 		time.Sleep(2 * time.Second)
 	}
 }
