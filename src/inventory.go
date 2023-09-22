@@ -67,3 +67,6 @@ func CheckItemInventory(perso *Character, itemname string) bool { // Function th
 	}
 	return false
 }
+
+func upgradeInventorySlot(perso *Character) {
+}

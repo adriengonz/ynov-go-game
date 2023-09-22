@@ -14,7 +14,8 @@ func Merchant(perso *Character) {
 	fmt.Println("5- Acheter une peau de troll (Coût : 7 pièces d'or)")
 	fmt.Println("6- Acheter du cuir de sanglier (Coût : 3 pièces d'or)")
 	fmt.Println("7- Acheter une plume de corbeau (Coût : 1 pièce d'or)")
-	fmt.Println("8- Revenir dans le menu principal")
+	fmt.Println("8- Acheter 10 emplacements de sac (Coût : 30 pièce d'or)")
+	fmt.Println("9- Revenir dans le menu principal")
 	fmt.Scan(&menumerchant)
 
 	switch menumerchant { // Menu of merchant in switch case form, permit to execute functions
@@ -44,9 +45,13 @@ func Merchant(perso *Character) {
 		Menu(perso)
 	case 7:
 		AddInventory(perso, "plume de corbeau")
-		perso.money -= 1
+		perso.money -= 30
 		Menu(perso)
 	case 8:
+		AddInventory(perso, "Emplacement de sac")
+		perso.money -= 30
+		Menu(perso)
+	case 9:
 		Menu(perso)
 	}
 }
