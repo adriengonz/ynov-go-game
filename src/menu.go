@@ -25,7 +25,7 @@ func Menu(persovar *Character) { // Function that prints the menu of game, who t
 		Merchant(persovar)
 	case 4:
 		Blacksmith(persovar)
-	case 5:
+	case 0:
 		os.Exit(0)
 	}
 }
