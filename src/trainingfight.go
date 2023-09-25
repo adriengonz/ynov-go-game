@@ -17,7 +17,7 @@ func trainingFight(perso *Character, monster *Monster) {
 		fmt.Println("Monstre - Points de vie :", monster.currentlife)
 
 		playerAttack := rand.Intn(20) + 1 // Tour du joueur
-		fmt.Println("Vous attaquez le monstre et lui infligez %d points de dégâts!\n", playerAttack)
+		fmt.Println("Vous attaquez le monstre et lui infligez", playerAttack, "points de dégâts!")
 		monster.currentlife -= playerAttack
 
 		if monster.currentlife <= 0 {
@@ -26,7 +26,7 @@ func trainingFight(perso *Character, monster *Monster) {
 		}
 
 		monsterAttack := rand.Intn(15) + 1 // Tour du monstre
-		fmt.Println("Le monstre vous attaque et vous inflige %d points de dégâts!\n", monsterAttack)
+		fmt.Println("Le monstre vous attaque et vous inflige", monsterAttack, "points de dégâts!")
 		perso.currentlife -= monsterAttack
 
 		if perso.currentlife <= 0 {
