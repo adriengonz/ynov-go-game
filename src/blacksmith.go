@@ -59,7 +59,7 @@ func Blacksmith(perso *Character) {
 			}
 		}
 
-	case 4:
+	case 0:
 		Menu(perso)
 	}
 }

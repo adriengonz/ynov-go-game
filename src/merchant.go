@@ -51,7 +51,7 @@ func Merchant(perso *Character) {
 		UpgradeInventorySlot(perso)
 		perso.money -= 30
 		Menu(perso)
-	case 9:
+	case 0:
 		Menu(perso)
 	}
 }
