@@ -7,6 +7,7 @@ import (
 
 func Menu(persovar *Character, monsterinstance *Monster) { // Function that prints the menu of game, who takes in argument "persovar" in pointer, who appoint the character structure
 	menuinput := 0
+	Clear()
 	fmt.Println("Menu:")
 	fmt.Println("1- Afficher les informations du personnage")
 	fmt.Println("2- Accéder au contenu de l’inventaire")
@@ -31,4 +32,8 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Function that prin
 	case 0:
 		os.Exit(0)
 	}
+}
+
+func Clear(){
+	fmt.Print("\033[H\033[2J")
 }

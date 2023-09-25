@@ -6,6 +6,7 @@ import (
 
 func Merchant(perso *Character, monster *Monster) {
 	menumerchant := 0
+	Clear()
 	fmt.Println("Bienvenue aventurier")
 	fmt.Println("1- Acheter une potion de soin (Coût : 3 pièces d'or)")
 	fmt.Println("2- Acheter une potion de poison (Coût : 7 pièces d'or)")

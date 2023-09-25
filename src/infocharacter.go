@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func DisplayInfo(perso *Character, monster *Monster) { // Function that prints specs about the character
+	Clear()
 	fmt.Println("Nom :", perso.name)
 	fmt.Println("Race :", perso.race)
 	fmt.Println("Classe :", perso.class)

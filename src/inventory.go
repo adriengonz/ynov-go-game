@@ -7,6 +7,7 @@ import (
 
 func AccessInventory(perso *Character, monster *Monster) { // Function for access inventory content
 	menuinventory := 0
+	Clear()
 	fmt.Println("Voici votre inventaire")
 	fmt.Println(perso.inventory)
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
@@ -72,7 +73,10 @@ func UpgradeInventorySlot(perso *Character) {
 	counter := 0
 	if counter <= 2 {
 		perso.limitInventory += 10
+		fmt.Println("Votre pouvez stocker dès a présent 10 éléments de plus dans votre invetaire !")
+		time.Sleep(2 * time.Second)
 	} else {
 		fmt.Println("Vous ne pouvez pas améliorer plus de 3 fois votre inventaire !")
+		time.Sleep(2 * time.Second)
 	}
 }

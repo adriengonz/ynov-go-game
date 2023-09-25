@@ -9,14 +9,14 @@ func trainingFight(perso *Character, monster *Monster) {
 	turn := 1
 
 	fmt.Println("Bienvenue dans le combat d'entraînement!")
-
+	
 	for perso.currentlife > 0 && monster.currentlife > 0 {
+		if turn%3 == 0 {
+			monster.attackpoint = monster.attackpoint*2
+		}
 		fmt.Println("\nTour", turn)
 		fmt.Println("Joueur - Points de vie :", perso.currentlife)
 		fmt.Println("Monstre - Points de vie :", monster.currentlife)
-		if turn%3 == 1 {
-			monster.attackpoint = monster.attackpoint*2
-		}
 
 		playerAttack := 5 // Tour du joueur
 		fmt.Println("Vous attaquez le monstre et lui infligez", playerAttack, "points de dégâts!")
