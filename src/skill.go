@@ -6,7 +6,12 @@ import(
 )
 
 func Spellbook(perso *Character, monster *Monster, sortbook string) {
-	newsortname := sortbook[9:]
+	if sortbook == "no" {
+		fmt.Println("Pas de livre trouvé dans votre inventaire !")
+		time.Sleep(2 * time.Second)
+		Menu(perso, monster)
+	}
+	newsortname := sortbook[15:]
 	for _, skillverif := range perso.skill { // Check if sort is already in skills slice
 		if skillverif == newsortname {
             fmt.Println(newsortname, "est déjà dans votre liste de skills !")
@@ -18,4 +23,13 @@ func Spellbook(perso *Character, monster *Monster, sortbook string) {
 	fmt.Println(newsortname, "a bien été ajouté à vos skills")
 	time.Sleep(2 * time.Second)
 	Menu(perso, monster)
+}
+
+func SearchBook(perso *Character, monster *Monster) string { // Function that search a book for spell
+	for _, booksearched := range perso.inventory { // Check if sort is already in skills slice
+		if booksearched[:15] == "Livre de sort: " {
+			return booksearched
+		}
+	}
+	return "no"
 }

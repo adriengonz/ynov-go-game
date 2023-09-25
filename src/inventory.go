@@ -21,7 +21,8 @@ func AccessInventory(perso *Character, monster *Monster) { // Function for acces
 	case 1:
 		TakePot(perso, monster)
 	case 2:
-		Spellbook(perso, monster, "livre de boule de feu")
+		book := SearchBook(perso, monster)
+		Spellbook(perso, monster, book)
 	}
 	var userinput int
 	fmt.Scan(&userinput)
