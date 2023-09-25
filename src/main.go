@@ -10,9 +10,9 @@ func main() {
 	m1.Init("Gobelin d’entrainement", 40, 20, 5)
 	characterinput := 0
 	fmt.Println("Faite votre choix de personnage:")
-	fmt.Println("1 - Merlius","Human","mage",1,100,50)
-	fmt.Println("2 - Legolas","Elf","archer",1,80,40)
-	fmt.Println("3 - Baldur","Dwarf","war",1,100,50)
+	fmt.Println("1 - Merlius","\n","   Human","\n","   mage","\n","   level 1","\n","   pv max = 100","\n","   pv actuel = 50")
+	fmt.Println("2 - Legolas","\n","   Elf","\n","   archer","\n","   level 1","\n","   pv max = 80","\n","   pv actuel = 40")
+	fmt.Println("3 - Baldur","\n","   Dwarf","\n","   war","\n","   level 1","\n","   pv max = 120","\n","   pv actuel = 60")
 	var p1 Character
 	fmt.Scan(&characterinput)
 
