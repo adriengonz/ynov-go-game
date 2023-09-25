@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func AccessInventory(perso *Character) { // Function for access inventory content
+func AccessInventory(perso *Character, monster *Monster) { // Function for access inventory content
 	menuinventory := 0
 	fmt.Println("Voici votre inventaire")
 	fmt.Println(perso.inventory)
@@ -16,11 +16,11 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 
 	switch menuinventory { // Menu in switch case form, permit to execute functions
 	case 0:
-		Menu(perso)
+		Menu(perso, monster)
 	case 1:
-		TakePot(perso)
+		TakePot(perso, monster)
 	case 2:
-		Spellbook(perso, "livre de boule de feu")
+		Spellbook(perso, monster, "livre de boule de feu")
 	}
 	var userinput int
 	fmt.Scan(&userinput)
@@ -28,7 +28,7 @@ func AccessInventory(perso *Character) { // Function for access inventory conten
 		fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 		fmt.Scan(&userinput)
 	}
-	Menu(perso)
+	Menu(perso, monster)
 }
 
 func AddInventory(perso *Character, item string) { // Function that add the idem variable to player inventory

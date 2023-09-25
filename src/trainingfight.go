@@ -11,7 +11,7 @@ func main() {
 	trainingFight()
 }
 
-func trainingFight() {
+func trainingFight(perso *Character, monster *Monster) {
 	playerHealth := 100
 	monsterHealth := 100
 	turn := 1

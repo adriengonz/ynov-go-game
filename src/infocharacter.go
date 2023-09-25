@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func DisplayInfo(perso *Character) { // Function that prints specs about the character
+func DisplayInfo(perso *Character, monster *Monster) { // Function that prints specs about the character
 	fmt.Println("Nom :", perso.name)
 	fmt.Println("Race :", perso.race)
 	fmt.Println("Classe :", perso.class)
@@ -19,7 +19,7 @@ func DisplayInfo(perso *Character) { // Function that prints specs about the cha
 		fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 		fmt.Scan(&userinputinfo)
 	}
-	Menu(perso)
+	Menu(perso, monster)
 }
 
 func Dead(perso *Character) { // Function that check if character is dead
