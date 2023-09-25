@@ -12,7 +12,7 @@ func trainingFight(perso *Character, monster *Monster) {
 	fmt.Println("Bienvenue dans le combat d'entraînement!")
 
 	for perso.currentlife > 0 && monster.currentlife > 0 {
-		fmt.Println("\nTour %d\n", turn)
+		fmt.Println("Tour", turn)
 		fmt.Println("Joueur - Points de vie :", perso.currentlife)
 		fmt.Println("Monstre - Points de vie :", monster.currentlife)
 
