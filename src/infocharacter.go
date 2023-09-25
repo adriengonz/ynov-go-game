@@ -23,10 +23,13 @@ func DisplayInfo(perso *Character, monster *Monster) { // Function that prints s
 	Menu(perso, monster)
 }
 
-func Dead(perso *Character) { // Function that check if character is dead
+func Dead(perso *Character, monster *Monster) bool { // Function that check if character is dead
 	if perso.currentlife == 0 {
 		fmt.Println("You are dead")
 		perso.currentlife = perso.maxlife / 2
 		fmt.Println("Vous venez de ressuciter avec la moitié de vos points de vies")
+		return true
+	} else {
+		return false
 	}
 }
