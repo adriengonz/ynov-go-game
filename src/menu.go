@@ -12,7 +12,8 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Function that prin
 	fmt.Println("2- Accéder au contenu de l’inventaire")
 	fmt.Println("3- Marchand")
 	fmt.Println("4- Forgeron")
-	fmt.Println("5- Quitter")
+	fmt.Println("5- S'entrainer au combat")
+	fmt.Println("0- Quitter")
 	fmt.Println("Votre choix ?")
 	fmt.Scan(&menuinput)
 
@@ -25,6 +26,8 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Function that prin
 		Merchant(persovar, monsterinstance)
 	case 4:
 		Blacksmith(persovar, monsterinstance)
+	case 5:
+		trainingFight(persovar, monsterinstance)
 	case 0:
 		os.Exit(0)
 	}
