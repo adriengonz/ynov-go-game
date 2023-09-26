@@ -30,7 +30,7 @@ func trainingFight(perso *Character, monster *Monster) {
 		monster.currentlife -= playerAttack
 		time.Sleep(2 * time.Second)
 		case 2:
-			AccessInventory(perso, monster)
+			AccessInventoryFight(perso, monster)
 		}
 
 		if monster.currentlife <= 0 {
