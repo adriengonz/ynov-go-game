@@ -41,10 +41,10 @@ func TakePotFight(perso *Character, monster *Monster) { // Add health to charact
 		}
 		fmt.Println("Vous avez utilisé une potion de soin, votre santé est mainteant de", perso.currentlife)
 		time.Sleep(2 * time.Second)
-		trainingFight(perso, monster)
+		TrainingFight(perso, monster)
 	} else { // If RemoveInventory return false (so character doesn't have potion in his inventory)
 		fmt.Println("Vous n'avez aucune potion dans votre inventaire !")
 		time.Sleep(2 * time.Second)
-		trainingFight(perso, monster)
+		TrainingFight(perso, monster)
 	}
 }

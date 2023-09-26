@@ -28,7 +28,7 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Function that prin
 	case 4:
 		Blacksmith(persovar, monsterinstance)
 	case 5:
-		trainingFight(persovar, monsterinstance)
+		TrainingFight(persovar, monsterinstance)
 	case 0:
 		os.Exit(0)
 	}
