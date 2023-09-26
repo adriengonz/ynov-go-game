@@ -6,13 +6,12 @@ import (
 )
 
 func trainingFight(perso *Character, monster *Monster) {
-	turn := 1
 	attackinput := 0
 	for perso.currentlife > 0 && monster.currentlife > 0 {
-		if turn%3 == 0 {
+		if perso.turn%3 == 0 {
 			monster.attackpoint *= 2
 		}
-		fmt.Println("\nTour", turn)
+		fmt.Println("\nTour", perso.turn)
 		fmt.Println("Joueur - Points de vie :", perso.currentlife)
 		fmt.Println("Monstre - Points de vie :", monster.currentlife)
 
@@ -52,10 +51,12 @@ func trainingFight(perso *Character, monster *Monster) {
 			Menu(perso, monster)
 		}
 
-		turn++
+		perso.turn++
 	}
 
 	fmt.Println("Fin du combat d'entraînement.")
+	perso.turn = 1 // Reset turn combat
+	monster.currentlife = monster.maxlife / 2 // Monster reset
 	time.Sleep(2 * time.Second)
 	Menu(perso, monster)
 }
