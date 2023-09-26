@@ -8,7 +8,6 @@ import (
 func trainingFight(perso *Character, monster *Monster) {
 	turn := 1
 	attackinput := 0
-	
 	for perso.currentlife > 0 && monster.currentlife > 0 {
 		if turn%3 == 0 {
 			monster.attackpoint *= 2
