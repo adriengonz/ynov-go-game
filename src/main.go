@@ -7,7 +7,7 @@ import (
 
 func main() { // Fonction pour afficher l'interface du choix de personnage
 	var m1 Monster
-	m1.Init("Gobelin d’entrainement", 40, 20, 5)
+	m1.Init("Gobelin d’entrainement", 40, 20, 5, 50)
 	characterinput := 0
 	fmt.Println("Faites votre choix de personnage:")
 	fmt.Println("1 - Merlius\n","   Human\n","   mage\n","   level 1\n","   pv max = 100\n","   pv actuel = 50")

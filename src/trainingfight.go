@@ -54,6 +54,7 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 			if monster.currentlife <= 0 { // Savoir si le monstre a été vaincu et arrêter le combat
 				fmt.Println("Vous avez vaincu le monstre! Félicitations!")
 				time.Sleep(3 * time.Second)
+				Exp(perso, monster)
 				break
 			}
 	
@@ -111,4 +112,15 @@ func GobelinPattern(perso *Character, monster *Monster) { // Fonction qui va êt
 	fmt.Println("Le monstre vous attaque et vous inflige", monster.attackpoint, "points de dégâts!")
 	perso.currentlife -= monster.attackpoint
 	time.Sleep(2 * time.Second)
+}
+
+func Exp(perso *Character, monster *Monster) {
+	perso.currentExperience += monster.exppoint
+	fmt.Println("Vous avez aquéri", monster.exppoint, "points d'éxpérience !")
+	time.Sleep(2 * time.Second)
+	if perso.currentExperience >= 100 {
+		perso.currentExperience = 0
+		perso.level += 1
+		fmt.Println("Vous êtes monté au niveau supérieur ! Vous etes au niveau", perso.level)
+	}
 }
