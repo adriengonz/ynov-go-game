@@ -8,7 +8,7 @@ import (
 func TakePot(perso *Character, monster *Monster) { // Rajoute les points de vie que la potion doit donner et supprime l'item
 	if RemoveInventory(perso, "potion de soin") {
 		perso.currentlife += 50
-		if perso.currentlife > perso.maxlife {
+		if perso.currentlife > perso.maxlife { // Si après avoir pris la potion la vie est supérieure a la vie max, la vie actuelle est définit sur la vie max
 			perso.currentlife = 100
 		}
 		fmt.Println("Vous avez utilisé une potion de soin, votre santé est mainteant de", perso.currentlife)

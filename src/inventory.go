@@ -15,7 +15,7 @@ func AccessInventory(perso *Character, monster *Monster) { // Fonction pour affi
 	fmt.Println("Tapez 2 pour apprendre un sort")
 	fmt.Scan(&menuinventory)
 
-	switch menuinventory { // Code pour choisir l'action du joueur
+	switch menuinventory { // Menu pour choisir l'action du joueur
 	case 0:
 		Menu(perso, monster)
 	case 1:
@@ -26,14 +26,14 @@ func AccessInventory(perso *Character, monster *Monster) { // Fonction pour affi
 	}
 	var userinput int
 	fmt.Scan(&userinput)
-	for userinput != 0 { // Code pour que quand on utilise un autre caractère que 0 ça nous retourne une erreur
+	for userinput != 0 { // Si l'utilisateur entre un autre caractère que 0, une erreur est renvoyée
 		fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 		fmt.Scan(&userinput)
 	}
 	Menu(perso, monster)
 }
 
-func AddInventory(perso *Character, item string) { // Code qui rajoute l'item dans l'inventaire
+func AddInventory(perso *Character, item string) { // Fonction qui rajoute l'item dans l'inventaire
 	if LimitItem(perso) {
 		fmt.Println("L'item ne peut pas être ajouté a votre inventaire car il est plein !")
 	} else {
@@ -43,7 +43,7 @@ func AddInventory(perso *Character, item string) { // Code qui rajoute l'item da
 	}
 }
 
-func RemoveInventory(perso *Character, itemname string) bool { // Code pour retirer l'objet de l'inventaire une fois utilisé
+func RemoveInventory(perso *Character, itemname string) bool { // Fonction qui retire l'objet de l'inventaire une fois utilisé
 	for i, itempicker := range perso.inventory { 
 		if itempicker == itemname {
             perso.inventory = append(perso.inventory[:i], perso.inventory[i+1:]...)
@@ -53,7 +53,7 @@ func RemoveInventory(perso *Character, itemname string) bool { // Code pour reti
 	return false
 }
 
-func LimitItem(perso *Character) bool { // Code vérifie la limite de l'inventaire
+func LimitItem(perso *Character) bool { // Fonction qui vérifie la limite de l'inventaire
 	if len(perso.inventory) >= perso.limitInventory {
 		return true
 	} else {
@@ -61,7 +61,7 @@ func LimitItem(perso *Character) bool { // Code vérifie la limite de l'inventai
 	}
 }
 
-func CheckItemInventory(perso *Character, itemname string) bool { // Code qui vérifie si l'objet est dans l'inventaire
+func CheckItemInventory(perso *Character, itemname string) bool { // Focntion qui vérifie si l'objet est dans l'inventaire
 	for _, itempicker := range perso.inventory { 
 		if itempicker == itemname {
 			return true
@@ -70,7 +70,7 @@ func CheckItemInventory(perso *Character, itemname string) bool { // Code qui v�
 	return false
 }
 
-func UpgradeInventorySlot(perso *Character) { // Code qui rajoute des places dans l'inventaire si on à l'objet attitré
+func UpgradeInventorySlot(perso *Character) { // Fonction qui rajoute des places dans l'inventaire si on à l'objet attitré
 	counter := 0
 	if counter <= 2 {
 		perso.limitInventory += 10

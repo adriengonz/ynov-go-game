@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func Menu(persovar *Character, monsterinstance *Monster) { // Fonction qui affiche l'interface du menu principale
+func Menu(persovar *Character, monsterinstance *Monster) { // Fonction qui affiche l'interface du menu principal
 	menuinput := 0
 	Clear()
 	fmt.Println("Menu:")
@@ -18,7 +18,7 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Fonction qui affic
 	fmt.Println("Votre choix ?")
 	fmt.Scan(&menuinput)
 
-	switch menuinput { // Code pour sélectionner la fonction voulut
+	switch menuinput { // Code pour sélectionner la fonction voulu
 	case 1:
 		DisplayInfo(persovar, monsterinstance)
 	case 2:

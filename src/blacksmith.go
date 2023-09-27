@@ -65,7 +65,7 @@ func Blacksmith(perso *Character, monster *Monster) { // Afficher les options de
 	}
 }
 
-func CheckBlacksmith(perso *Character, monster *Monster, item1 string, moneyneeded int) bool { // Function that check if item is in inventory, and if character has sufficent money for craft items
+func CheckBlacksmith(perso *Character, monster *Monster, item1 string, moneyneeded int) bool { // Fonction qui vérifie si l'objet est dans l'inventaire, et si le personnage a assez d'argent pour fabriquer l'objet
 	if CheckItemInventory(perso, item1) {
 			if perso.money > moneyneeded {
 				return true

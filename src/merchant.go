@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func Merchant(perso *Character, monster *Monster) { // Afficher les options de l'interface marchant
+func Merchant(perso *Character, monster *Monster) { // Afficher les options de l'interface merchant
 	menumerchant := 0
 	Clear()
 	fmt.Println("Bienvenue aventurier")

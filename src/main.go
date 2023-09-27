@@ -16,7 +16,7 @@ func main() { // Fonction pour afficher l'interface du choix de personnage
 	var p1 Character
 	fmt.Scan(&characterinput)
 
-	switch characterinput { // Code pour sélectionner le perso voulut avec les stats et les caractéristiques
+	switch characterinput { // Menu pour sélectionner le perso voulu avec les stats et les caractéristiques
 	case 1:
 		p1.Init("Merlius", "Human", "mage", 1, 100, 50, []string {"potion de soin"}, []string {"éclaire de givre"}, 100, p1.equipment, 10, 1)
 	case 2:
