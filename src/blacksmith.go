@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func Blacksmith(perso *Character, monster *Monster) {
+func Blacksmith(perso *Character, monster *Monster) { // Afficher les options de l'interface forgeron
 	menublacksmith := 0
 	Clear()
 	fmt.Println("Bienvenue chez le forgeron")
@@ -15,7 +15,7 @@ func Blacksmith(perso *Character, monster *Monster) {
 	fmt.Println("0 - Revenir au menu principal")
 	fmt.Scan(&menublacksmith)
 
-	switch menublacksmith { // Menu in switch case form, permit to craft elements with blacksmith
+	switch menublacksmith { // code pour rajouter l'item craft dans son inventaire, retirer les items nécessaires pour le craft, retirer l'argent du joueur
 	case 1:
 		if CheckBlacksmith(perso, monster, "plume de corbeau", 5) {
 			if CheckBlacksmith(perso, monster, "cuir de sanglier", 5) {

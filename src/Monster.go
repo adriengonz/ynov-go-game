@@ -1,6 +1,6 @@
 package main
 
-type Monster struct { // Structure of Character
+type Monster struct { // La structure du monstre avec ses caractéristique
 	name        string
 	maxlife     int
 	currentlife int

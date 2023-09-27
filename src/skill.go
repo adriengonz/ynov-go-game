@@ -12,21 +12,21 @@ func Spellbook(perso *Character, monster *Monster, sortbook string) {
 		Menu(perso, monster)
 	}
 	newsortname := sortbook[15:]
-	for _, skillverif := range perso.skill { // Check if sort is already in skills slice
+	for _, skillverif := range perso.skill { // Vérifie si le skill n'est pas déjà apprit
 		if skillverif == newsortname {
             fmt.Println(newsortname, "est déjà dans votre liste de skills !")
 			Menu(perso, monster)
 		}
 	}
-	perso.skill = append(perso.skill, newsortname) // Append sort in skills slice
+	perso.skill = append(perso.skill, newsortname) // Rajoute le skill dans les compétences
 	RemoveInventory(perso, sortbook)
 	fmt.Println(newsortname, "a bien été ajouté à vos skills")
 	time.Sleep(2 * time.Second)
 	Menu(perso, monster)
 }
 
-func SearchBook(perso *Character, monster *Monster) string { // Function that search a book for spell
-	for _, booksearched := range perso.inventory { // Check if sort is already in skills slice
+func SearchBook(perso *Character, monster *Monster) string { // Fonction qui recherche un sort dans un livre de sort
+	for _, booksearched := range perso.inventory { // Vérifie si le skill n'est pas déjà apprit
 		if booksearched[:15] == "Livre de sort: " {
 			return booksearched
 		}

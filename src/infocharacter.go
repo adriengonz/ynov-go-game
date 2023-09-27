@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func DisplayInfo(perso *Character, monster *Monster) { // Function that prints specs about the character
+func DisplayInfo(perso *Character, monster *Monster) { // Fonction pour afficher l'interface du joueur
 	Clear()
 	fmt.Println("Nom :", perso.name)
 	fmt.Println("Race :", perso.race)
@@ -16,14 +16,14 @@ func DisplayInfo(perso *Character, monster *Monster) { // Function that prints s
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	var userinputinfo int
 	fmt.Scan(&userinputinfo)
-	for userinputinfo != 0 { // While userinput is not 0, repeat the user input
+	for userinputinfo != 0 { // Code pour que quand on utilise un autre caractère que 0 ça nous retourne une erreur
 		fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 		fmt.Scan(&userinputinfo)
 	}
 	Menu(perso, monster)
 }
 
-func Dead(perso *Character) bool { // Function that check if character is dead
+func Dead(perso *Character) bool { // Code pour regarder si le perso est mort ou non
 	if perso.currentlife <= 0 {
 		return true
 	} else {

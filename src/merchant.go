@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func Merchant(perso *Character, monster *Monster) {
+func Merchant(perso *Character, monster *Monster) { // Afficher les options de l'interface marchant
 	menumerchant := 0
 	Clear()
 	fmt.Println("Bienvenue aventurier")
@@ -19,7 +19,7 @@ func Merchant(perso *Character, monster *Monster) {
 	fmt.Println("0- Revenir dans le menu principal")
 	fmt.Scan(&menumerchant)
 
-	switch menumerchant { // Menu of merchant in switch case form, permit to execute functions
+	switch menumerchant { // Code pour ajouter l'item dans l'inventaire et retirer l'argent au joueur
 	case 1:
 		AddInventory(perso, "potion de soin")
 		perso.money -= 3

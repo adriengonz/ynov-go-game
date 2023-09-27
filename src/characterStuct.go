@@ -1,13 +1,5 @@
 package main
 
-type name int
-
-const (
-    Humain name = iota
-    Elf
-    Nain
-)
-
 type skill int
 
 const (
@@ -15,13 +7,13 @@ const (
     Projectil_des_arcanes
 )
 
-type Equipment struct { // Structure of Equipment
+type Equipment struct { // La structure de l'équipement
 	head  []string
 	torso []string
 	foot  []string
 }
 
-type Character struct { // Structure of Character
+type Character struct { // La structure du personnage
 	name        string
 	race        string
 	class       string

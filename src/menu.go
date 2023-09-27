@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func Menu(persovar *Character, monsterinstance *Monster) { // Function that prints the menu of game, who takes in argument "persovar" in pointer, who appoint the character structure
+func Menu(persovar *Character, monsterinstance *Monster) { // Fonction qui affiche l'interface du menu principale
 	menuinput := 0
 	Clear()
 	fmt.Println("Menu:")
@@ -18,7 +18,7 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Function that prin
 	fmt.Println("Votre choix ?")
 	fmt.Scan(&menuinput)
 
-	switch menuinput { // Menu in switch case form, permit to execute functions
+	switch menuinput { // Code pour sélectionner la fonction voulut
 	case 1:
 		DisplayInfo(persovar, monsterinstance)
 	case 2:
