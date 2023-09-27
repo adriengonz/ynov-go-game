@@ -23,6 +23,7 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 
 		if monster.currentlife <= 0 { // Savoir si le monstre a été vaincu et arrêter le combat
 			fmt.Println("Vous avez vaincu le monstre! Félicitations!")
+			Exp(perso, monster)
 			time.Sleep(3 * time.Second)
 			break
 		}
