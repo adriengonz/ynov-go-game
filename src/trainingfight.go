@@ -3,16 +3,22 @@ package main
 import (
 	"fmt"
 	"time"
+	"math/rand"
 )
 
 func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainement
+	rand.Seed(time.Now().UnixNano()) // Initialiser la génération de nombres aléatoires	
+	initiativeplayer := rand.Intn(100-0)
+	initiativemonster := rand.Intn(100-0)
 	fmt.Println("Bienvenue dans le combat d'entraînement!")
+	fmt.Println("Initiatives du combat:\nJoueur:", initiativeplayer, "\nMonstre:", initiativemonster)
 	for perso.currentlife > 0 && monster.currentlife > 0 {
 		fmt.Println("\nTour", perso.turn)
 		fmt.Println("Joueur - Points de vie :", perso.currentlife)
 		fmt.Println("Monstre - Points de vie :", monster.currentlife)
 
-		CharTurn(perso, monster) // Tour du joueur
+		if initiativeplayer > initiativemonster {
+			CharTurn(perso, monster) // Tour du joueur
 
 		if monster.currentlife <= 0 { // Savoir si le monstre a été vaincu et arrêter le combat
 			fmt.Println("Vous avez vaincu le monstre! Félicitations!")
@@ -31,11 +37,33 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 		}
 
 		perso.turn++
+		} else {
+			GobelinPattern(perso, monster) // Tour du monstre
+
+			if Dead(perso) { // Savoir si le perosnnage est mort, et ressuciter avec la moitié de ses points de vie max
+				fmt.Println("You are dead")
+				perso.currentlife = perso.maxlife / 2
+				fmt.Println("Vous venez de ressuciter avec la moitié de vos points de vies")
+				time.Sleep(3 * time.Second)
+				Menu(perso, monster)
+			}
+	
+			CharTurn(perso, monster) // Tour du joueur
+	
+			if monster.currentlife <= 0 { // Savoir si le monstre a été vaincu et arrêter le combat
+				fmt.Println("Vous avez vaincu le monstre! Félicitations!")
+				time.Sleep(3 * time.Second)
+				break
+			}
+	
+			perso.turn++
+		}
 	}
 
-	fmt.Println("Fin du combat d'entraînement.")
+	fmt.Println("Fin du combat d'entraînement")
 	perso.turn = 1 // Reinitialisation tour de combat
 	monster.currentlife = monster.maxlife / 2 // Reinitialisation vie monstre
+	monster.attackpoint = 5
 	time.Sleep(2 * time.Second)
 	Menu(perso, monster)
 }
