@@ -14,6 +14,7 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Fonction qui affic
 	fmt.Println("3- Marchand")
 	fmt.Println("4- Forgeron")
 	fmt.Println("5- S'entrainer au combat")
+	fmt.Println("6- Qui sont ils ?")
 	fmt.Println("0- Quitter")
 	fmt.Println("Votre choix ?")
 	fmt.Scan(&menuinput)
@@ -29,6 +30,8 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Fonction qui affic
 		Blacksmith(persovar, monsterinstance)
 	case 5:
 		TrainingFight(persovar, monsterinstance)
+	case 6:
+		fmt.Println("Thanos = Josh Brolin","\n","Maximus Decimus Meridius = Russel Crowe")
 	case 0:
 		os.Exit(0)
 	}
