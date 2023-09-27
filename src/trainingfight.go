@@ -66,7 +66,7 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 	fmt.Println("Fin du combat d'entraînement")
 	perso.turn = 1 // Reinitialisation tour de combat
 	monster.currentlife = monster.maxlife / 2 // Reinitialisation vie monstre
-	monster.attackpoint = 5
+	monster.attackpoint = 5 // Reinitialisation points d'attaque monstre
 	time.Sleep(2 * time.Second)
 	Menu(perso, monster)
 }
@@ -77,8 +77,11 @@ func AccessInventoryFight(perso *Character, monster *Monster) { // Fonction qui 
 	fmt.Println(perso.inventory)
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	fmt.Println("Tapez 1 pour prendre une potion de soin")
-
 	fmt.Scan(&menuinventoryfight)
+	for menuinventoryfight < 0 || menuinventoryfight > 1 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
+	fmt.Scan(&menuinventoryfight)
+	}
 
 	switch menuinventoryfight {
 	case 0:
@@ -94,6 +97,10 @@ func CharTurn(perso *Character, monster *Monster) { // Fonction qui va être app
 	fmt.Println("1 - attaquer")
 	fmt.Println("2 - inventaire")
 	fmt.Scan(&attackinput)
+	for attackinput < 0 || attackinput > 2 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	fmt.Println("Votre commande n'a pas été reconnue")
+	fmt.Scan(&attackinput)
+	}
 
 	switch attackinput {
 		case 1:
@@ -110,6 +117,10 @@ func AttackMenu(perso *Character, monster *Monster) { // Menu qui s'affiche lors
 	fmt.Println("2 - Sort")
 	fmt.Println("0 - Retour au menu précédent")
 	fmt.Scan(&attackmenuinput)
+	for attackmenuinput < 0 || attackmenuinput > 2 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
+	fmt.Scan(&attackmenuinput)
+	}
 
 	switch attackmenuinput {
 		case 1: // Attaque classique

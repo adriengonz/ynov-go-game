@@ -18,11 +18,11 @@ func main() { // Fonction pour afficher l'interface du choix de personnage
 
 	switch characterinput { // Menu pour sélectionner le perso voulu avec les stats et les caractéristiques
 	case 1:
-		p1.Init("Merlius", "Human", "mage", 1, 100, 50, []string {"potion de soin"}, []string {"éclaire de givre"}, 100, p1.equipment, 10, 0, 1)
+		p1.Init("Merlius", "Human", "mage", 1, 100, 50, []string {"potion de soin"}, []string {"éclair de givre", "coup de poing"}, 100, p1.equipment, 10, 0, 1)
 	case 2:
-		p1.Init("Legolas", "Elf", "archer", 1, 80, 40, []string {"potion de soin"}, []string {"éclaire de givre"}, 100, p1.equipment, 10, 0, 1)
+		p1.Init("Legolas", "Elf", "archer", 1, 80, 40, []string {"potion de soin"}, []string {"éclair de givre"}, 100, p1.equipment, 10, 0, 1)
 	case 3:
-		p1.Init("Baldur", "Dwarf", "war", 1, 120, 60, []string {"potion de soin"}, []string {"éclaire de givre"}, 100, p1.equipment, 10, 0, 1)
+		p1.Init("Baldur", "Dwarf", "war", 1, 120, 60, []string {"potion de soin"}, []string {"éclair de givre"}, 100, p1.equipment, 10, 0, 1)
 	case 0:
 		os.Exit(0)
 	}

@@ -18,6 +18,10 @@ func Merchant(perso *Character, monster *Monster) { // Afficher les options de l
 	fmt.Println("8- Acheter 10 emplacements de sac (Coût : 30 pièce d'or)")
 	fmt.Println("0- Revenir dans le menu principal")
 	fmt.Scan(&menumerchant)
+	for menumerchant < 0 || menumerchant > 8 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
+	fmt.Scan(&menumerchant)
+	}
 
 	switch menumerchant { // Code pour ajouter l'item dans l'inventaire et retirer l'argent au joueur
 	case 1:

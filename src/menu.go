@@ -18,7 +18,10 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Fonction qui affic
 	fmt.Println("0- Quitter")
 	fmt.Println("Votre choix ?")
 	fmt.Scan(&menuinput)
-
+	for menuinput < 0 || menuinput > 1 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
+	fmt.Scan(&menuinput)
+	}
 	switch menuinput { // Code pour sélectionner la fonction voulu
 	case 1:
 		DisplayInfo(persovar, monsterinstance)

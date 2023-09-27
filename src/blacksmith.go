@@ -14,6 +14,10 @@ func Blacksmith(perso *Character, monster *Monster) { // Afficher les options de
 	fmt.Println("3 - Fabriquer des bottes de l'aventurier (5 pièces d'or, 1 fourrure de loup et 1 cuir de sanglier)")
 	fmt.Println("0 - Revenir au menu principal")
 	fmt.Scan(&menublacksmith)
+	for menublacksmith < 0 || menublacksmith > 3 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
+	fmt.Scan(&menublacksmith)
+	}
 
 	switch menublacksmith { // code pour rajouter l'item craft dans son inventaire, retirer les items nécessaires pour le craft, retirer l'argent du joueur
 	case 1:

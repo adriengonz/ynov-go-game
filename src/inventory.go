@@ -13,7 +13,7 @@ func AccessInventory(perso *Character, monster *Monster) { // Fonction pour affi
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	fmt.Println("Tapez 1 pour prendre une potion de soin")
 	fmt.Scan(&menuinventory)
-	for menuinventory < 0 || menuinventory > 1 { // Si l'utilisateur entre un autre caractère que 0, une erreur est renvoyée
+	for menuinventory < 0 || menuinventory > 1 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
 	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 	fmt.Scan(&menuinventory)
 }
