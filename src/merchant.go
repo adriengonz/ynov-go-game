@@ -29,7 +29,7 @@ func Merchant(perso *Character, monster *Monster) { // Afficher les options de l
 		perso.money -= 7
 		Merchant(perso, monster)
 	case 3:
-		AddInventory(perso, "Livre de sort: boule de feu")
+		Spellbook(perso, "Livre de sort: boule de feu", 25)
 		perso.money -= 25
 		Merchant(perso, monster)
 	case 4:

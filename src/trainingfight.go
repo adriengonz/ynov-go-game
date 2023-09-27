@@ -90,19 +90,58 @@ func AccessInventoryFight(perso *Character, monster *Monster) { // Fonction qui 
 
 func CharTurn(perso *Character, monster *Monster) { // Fonction qui va être appelée au tour du joueur
 	attackinput := 0
-	fmt.Println("Que voulez vous faire ?")
+	fmt.Println("\nQue voulez vous faire ?")
 	fmt.Println("1 - attaquer")
 	fmt.Println("2 - inventaire")
 	fmt.Scan(&attackinput)
 
 	switch attackinput {
 		case 1:
+			AttackMenu(perso, monster)
+		case 2:
+			AccessInventoryFight(perso, monster)
+		}
+}
+
+func AttackMenu(perso *Character, monster *Monster) { // Menu qui s'affiche lors de l'attaque
+	attackmenuinput := 0
+	fmt.Println("\nQuelle attaque voulez-vous utiliser ?")
+	fmt.Println("1 - Attaque classique")
+	fmt.Println("2 - Sort")
+	fmt.Println("0 - Retour au menu précédent")
+	fmt.Scan(&attackmenuinput)
+
+	switch attackmenuinput {
+		case 1: // Attaque classique
 		playerAttack := 5
 		fmt.Println("Vous attaquez le monstre et lui infligez", playerAttack, "points de dégâts!")
 		monster.currentlife -= playerAttack
 		time.Sleep(2 * time.Second)
 		case 2:
-			AccessInventoryFight(perso, monster)
+			skillinput := 0
+			skillname := ""
+			fmt.Println(perso.skill) // Affiche les skills disponibles
+			fmt.Println("Quel sort voulez-vous utiliser ? Tapez le numéro correspondant au sort (de gauche à droite)")
+			fmt.Scan(&skillinput)
+			skillname = perso.skill[skillinput-1] // Récupération du nom du skill
+			if skillname == "boule de feu" { // Conditions par rapoort au nom du skill, et actions selon celui ci
+				playerAttack := 15
+				fmt.Println("Vous attaquez le monstre avec une boule de feu et lui infligez", playerAttack, "points de dégâts!")
+				monster.currentlife -= playerAttack
+				time.Sleep(2 * time.Second)
+			} else if skillname == "coup de poing" {
+				playerAttack := 8
+				fmt.Println("Vous attaquez le monstre avec un coup de poing et lui infligez", playerAttack, "points de dégâts!")
+				monster.currentlife -= playerAttack
+				time.Sleep(2 * time.Second)
+			} else if skillname == "éclair de givre" {
+				playerAttack := 18
+				fmt.Println("Vous attaquez le monstre avec un éclair de givre et lui infligez", playerAttack, "points de dégâts!")
+				monster.currentlife -= playerAttack
+				time.Sleep(2 * time.Second)
+			}
+		case 0: // Retour au menu précédent
+			CharTurn(perso, monster)
 		}
 }
 

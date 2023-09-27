@@ -12,23 +12,17 @@ func AccessInventory(perso *Character, monster *Monster) { // Fonction pour affi
 	fmt.Println(perso.inventory)
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	fmt.Println("Tapez 1 pour prendre une potion de soin")
-	fmt.Println("Tapez 2 pour apprendre un sort")
 	fmt.Scan(&menuinventory)
+	for menuinventory < 0 || menuinventory > 1 { // Si l'utilisateur entre un autre caractère que 0, une erreur est renvoyée
+	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
+	fmt.Scan(&menuinventory)
+}
 
 	switch menuinventory { // Menu pour choisir l'action du joueur
 	case 0:
 		Menu(perso, monster)
 	case 1:
 		TakePot(perso, monster)
-	case 2:
-		book := SearchBook(perso, monster)
-		Spellbook(perso, monster, book)
-	}
-	var userinput int
-	fmt.Scan(&userinput)
-	for userinput != 0 { // Si l'utilisateur entre un autre caractère que 0, une erreur est renvoyée
-		fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
-		fmt.Scan(&userinput)
 	}
 	Menu(perso, monster)
 }
