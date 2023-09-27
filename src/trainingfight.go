@@ -121,6 +121,7 @@ func Exp(perso *Character, monster *Monster) {
 	if perso.currentExperience >= 100 {
 		perso.currentExperience = 0
 		perso.level += 1
-		fmt.Println("Vous êtes monté au niveau supérieur ! Vous etes au niveau", perso.level)
+		fmt.Println("Vous êtes monté au niveau supérieur ! Vous êtes au niveau", perso.level)
+		time.Sleep(2 * time.Second)
 	}
 }
