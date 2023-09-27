@@ -37,7 +37,7 @@ func TakePotFight(perso *Character, monster *Monster) { // Add health to charact
 	if RemoveInventory(perso, "potion de soin") {
 		perso.currentlife += 50
 		if perso.currentlife > perso.maxlife {
-			perso.currentlife = 100
+			perso.currentlife = perso.maxlife
 		}
 		fmt.Println("Vous avez utilisé une potion de soin, votre santé est mainteant de", perso.currentlife)
 		time.Sleep(2 * time.Second)

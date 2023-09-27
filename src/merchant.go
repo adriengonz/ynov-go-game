@@ -23,35 +23,35 @@ func Merchant(perso *Character, monster *Monster) {
 	case 1:
 		AddInventory(perso, "potion de soin")
 		perso.money -= 3
-		Menu(perso, monster)
+		Merchant(perso, monster)
 	case 2:
 		AddInventory(perso, "potion de poison")
 		perso.money -= 7
-		Menu(perso, monster)
+		Merchant(perso, monster)
 	case 3:
 		AddInventory(perso, "Livre de sort: boule de feu")
 		perso.money -= 25
-		Menu(perso, monster)
+		Merchant(perso, monster)
 	case 4:
 		AddInventory(perso, "fourrure de loup")
 		perso.money -= 4
-		Menu(perso, monster)
+		Merchant(perso, monster)
 	case 5:
 		AddInventory(perso, "peau de troll")
 		perso.money -= 7
-		Menu(perso, monster)
+		Merchant(perso, monster)
 	case 6:
 		AddInventory(perso, "cuir de sanglier")
 		perso.money -= 3
-		Menu(perso, monster)
+		Merchant(perso, monster)
 	case 7:
 		AddInventory(perso, "plume de corbeau")
 		perso.money -= 30
-		Menu(perso, monster)
+		Merchant(perso, monster)
 	case 8:
 		UpgradeInventorySlot(perso)
 		perso.money -= 30
-		Menu(perso, monster)
+		Merchant(perso, monster)
 	case 0:
 		Menu(perso, monster)
 	}
