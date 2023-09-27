@@ -12,13 +12,14 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 	initiativemonster := rand.Intn(100-0)
 	fmt.Println("Bienvenue dans le combat d'entraînement!")
 	fmt.Println("Initiatives du combat:\nJoueur:", initiativeplayer, "\nMonstre:", initiativemonster)
-	for perso.currentlife > 0 && monster.currentlife > 0 {
+
+	for perso.currentlife > 0 && monster.currentlife > 0 { // Boucle pour le combat 
 		fmt.Println("\nTour", perso.turn)
 		fmt.Println("Joueur - Points de vie :", perso.currentlife)
 		fmt.Println("Monstre - Points de vie :", monster.currentlife)
 
-		if initiativeplayer > initiativemonster {
-			CharTurn(perso, monster) // Tour du joueur
+		if initiativeplayer > initiativemonster { // Si l'initiative du joueur est plus grande, le joueur commence (sinon le monstre commence)
+			CharTurn(perso, monster)
 
 		if monster.currentlife <= 0 { // Savoir si le monstre a été vaincu et arrêter le combat
 			fmt.Println("Vous avez vaincu le monstre! Félicitations!")
@@ -37,8 +38,8 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 		}
 
 		perso.turn++
-		} else {
-			GobelinPattern(perso, monster) // Tour du monstre
+		} else { // Si le monstre a plus d'initiative que le joueur, le monstre commence
+			GobelinPattern(perso, monster)
 
 			if Dead(perso) { // Savoir si le perosnnage est mort, et ressuciter avec la moitié de ses points de vie max
 				fmt.Println("You are dead")
@@ -77,7 +78,7 @@ func AccessInventoryFight(perso *Character, monster *Monster) { // Fonction qui 
 
 	fmt.Scan(&menuinventoryfight)
 
-	switch menuinventoryfight { // Menu in switch case form, permit to execute functions
+	switch menuinventoryfight {
 	case 0:
 		TrainingFight(perso, monster)
 	case 1:
