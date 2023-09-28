@@ -1,12 +1,5 @@
 package main
 
-type skill int
-
-const (
-    éclaire_de_givre skill = iota
-    Projectil_des_arcanes
-)
-
 type Equipment struct { // La structure de l'équipement
 	head  []string
 	torso []string
