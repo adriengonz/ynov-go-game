@@ -85,9 +85,10 @@ func AccessInventoryFight(perso *Character, monster *Monster) { // Fonction qui 
 	fmt.Println(perso.inventory)
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	fmt.Println("Tapez 1 pour prendre une potion de soin")
-	fmt.Println("Tapez 2 pour prendre une potion de soin")
+	fmt.Println("Tapez 2 pour prendre une potion de mana")
+	fmt.Println("Tapez 3 pour utiliser une potion de poison")
 	fmt.Scan(&menuinventoryfight)
-	for menuinventoryfight < 0 || menuinventoryfight > 2 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	for menuinventoryfight < 0 || menuinventoryfight > 3 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
 	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 	fmt.Scan(&menuinventoryfight)
 	}
@@ -99,5 +100,7 @@ func AccessInventoryFight(perso *Character, monster *Monster) { // Fonction qui 
 		TakePotFight(perso, monster)
 	case 2:
 		TakePotManaFight(perso, monster)
+	case 3:
+		PoisonPot(perso, monster)
 	}
 }

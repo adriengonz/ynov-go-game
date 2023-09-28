@@ -24,7 +24,7 @@ func TakePot(perso *Character, monster *Monster) { // Rajoute les points de vie 
 func PoisonPot(perso *Character, monster *Monster) { // La fonction de la poition de poison
 	if RemoveInventory(perso, "potion de poison") {
 		for i:= 0 ; i < 3 ; i++ {
-			perso.currentlife -= 10
+			monster.currentlife -= 10
 			fmt.Println("Des degats ont été infligés ! L'ennemi est à", monster.currentlife, "de vie !")
 			time.Sleep(3 * time.Second)
 		}
