@@ -54,6 +54,8 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 	
 			if monster.currentlife <= 0 { // Savoir si le monstre a été vaincu et arrêter le combat
 				fmt.Println("Vous avez vaincu le monstre! Félicitations!")
+				perso.money += 50 // Ajout d'argent suite a la victoire contre le monstre
+				fmt.Println("Vous gagnez 50 pièces d'or !")
 				time.Sleep(3 * time.Second)
 				Exp(perso, monster)
 				break
@@ -136,20 +138,47 @@ func AttackMenu(perso *Character, monster *Monster) { // Menu qui s'affiche lors
 			fmt.Scan(&skillinput)
 			skillname = perso.skill[skillinput-1] // Récupération du nom du skill
 			if skillname == "boule de feu" { // Conditions par rapoort au nom du skill, et actions selon celui ci
-				playerAttack := 15
-				fmt.Println("Vous attaquez le monstre avec une boule de feu et lui infligez", playerAttack, "points de dégâts!")
-				monster.currentlife -= playerAttack
-				time.Sleep(2 * time.Second)
+				if perso.mana > 5 { // Conditions par rapport au mana
+					perso.mana -= 5 // Utilisation de mana
+					playerAttack := 15 // Définition des points d'attaque par rapport au sort choisi
+					fmt.Println("Vous utilisez 5 de mana pour cet attaque")
+					time.Sleep(1 * time.Second)
+					fmt.Println("Vous attaquez le monstre avec une boule de feu et lui infligez", playerAttack, "points de dégâts!")
+					monster.currentlife -= playerAttack
+					time.Sleep(2 * time.Second)
+				} else {
+					fmt.Println("Vous n'avez pas assez de mana pour utiliser ce sort ! Il vous manque", 5 - perso.mana, "de mana")
+					time.Sleep(2 * time.Second)
+					AttackMenu(perso, monster)
+				}
 			} else if skillname == "coup de poing" {
-				playerAttack := 8
-				fmt.Println("Vous attaquez le monstre avec un coup de poing et lui infligez", playerAttack, "points de dégâts!")
-				monster.currentlife -= playerAttack
-				time.Sleep(2 * time.Second)
+				if perso.mana > 10 { // Conditions par rapport au mana
+					perso.mana -= 10 // Utilisation de mana
+					playerAttack := 8 // Définition des points d'attaque par rapport au sort choisi
+					fmt.Println("Vous utilisez 10 de mana pour cet attaque")
+					time.Sleep(1 * time.Second)
+					fmt.Println("Vous attaquez le monstre avec un coup de poing et lui infligez", playerAttack, "points de dégâts!")
+					monster.currentlife -= playerAttack
+					time.Sleep(2 * time.Second)
+				} else {
+					fmt.Println("Vous n'avez pas assez de mana pour utiliser ce sort ! Il vous manque", 10 - perso.mana, "de mana")
+					time.Sleep(2 * time.Second)
+					AttackMenu(perso, monster)
+				}
 			} else if skillname == "éclair de givre" {
-				playerAttack := 18
-				fmt.Println("Vous attaquez le monstre avec un éclair de givre et lui infligez", playerAttack, "points de dégâts!")
-				monster.currentlife -= playerAttack
-				time.Sleep(2 * time.Second)
+				if perso.mana > 15 { // Conditions par rapport au mana
+					perso.mana -= 15 // Utilisation de mana
+					playerAttack := 18 // Définition des points d'attaque par rapport au sort choisi
+					fmt.Println("Vous utilisez 15 de mana pour cet attaque")
+					time.Sleep(1 * time.Second)
+					fmt.Println("Vous attaquez le monstre avec un éclair de givre et lui infligez", playerAttack, "points de dégâts!")
+					monster.currentlife -= playerAttack
+					time.Sleep(2 * time.Second)
+				} else {
+					fmt.Println("Vous n'avez pas assez de mana pour utiliser ce sort ! Il vous manque", 15 - perso.mana, "de mana")
+					time.Sleep(2 * time.Second)
+					AttackMenu(perso, monster)
+				}
 			}
 		case 0: // Retour au menu précédent
 			CharTurn(perso, monster)
@@ -165,11 +194,11 @@ func GobelinPattern(perso *Character, monster *Monster) { // Fonction qui va êt
 	time.Sleep(2 * time.Second)
 }
 
-func Exp(perso *Character, monster *Monster) {
+func Exp(perso *Character, monster *Monster) { // Fonction qui ajoute de l'expérience au joueur
 	perso.currentExperience += monster.exppoint
 	fmt.Println("Vous avez aquéri", monster.exppoint, "points d'éxpérience !")
 	time.Sleep(2 * time.Second)
-	if perso.currentExperience >= 100 {
+	if perso.currentExperience >= 100 { // Si l'exp est supérieur a 100, passer au niveau supérieur
 		perso.currentExperience = 0
 		perso.level += 1
 		fmt.Println("Vous êtes monté au niveau supérieur ! Vous êtes au niveau", perso.level)

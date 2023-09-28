@@ -25,11 +25,12 @@ type Character struct { // La structure du personnage
 	money       int
 	equipment   Equipment
 	limitInventory int
+	mana 		int
 	currentExperience int
 	turn		int
 }
 
-func (p *Character) Init(name string, race string, class string, level int, maxlife int, currentlife int, inventory []string, skill []string, money int, equipment Equipment, limitInventory int, currentExperience int, turn int) {
+func (p *Character) Init(name string, race string, class string, level int, maxlife int, currentlife int, inventory []string, skill []string, money int, equipment Equipment, limitInventory int, mana int, currentExperience int, turn int) {
 	p.name = name
 	p.race = race
 	p.class = class
@@ -41,6 +42,7 @@ func (p *Character) Init(name string, race string, class string, level int, maxl
 	p.money = money
 	p.equipment = equipment
 	p.limitInventory = limitInventory
+	p.mana = mana
 	p.currentExperience = currentExperience
 	p.turn = turn
 }
