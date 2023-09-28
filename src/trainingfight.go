@@ -73,26 +73,6 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 	Menu(perso, monster)
 }
 
-func AccessInventoryFight(perso *Character, monster *Monster) { // Fonction qui permet d'accéder a l'inventaire pendant un combat (quelques modifications par rapport a l'accès inventaire classique)
-	menuinventoryfight := 0
-	fmt.Println("Voici votre inventaire")
-	fmt.Println(perso.inventory)
-	fmt.Println("Tapez 0 pour revenir au menu précedent")
-	fmt.Println("Tapez 1 pour prendre une potion de soin")
-	fmt.Scan(&menuinventoryfight)
-	for menuinventoryfight < 0 || menuinventoryfight > 1 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
-	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
-	fmt.Scan(&menuinventoryfight)
-	}
-
-	switch menuinventoryfight {
-	case 0:
-		TrainingFight(perso, monster)
-	case 1:
-		TakePotFight(perso, monster)
-	}
-}
-
 func CharTurn(perso *Character, monster *Monster) { // Fonction qui va être appelée au tour du joueur
 	attackinput := 0
 	fmt.Println("\nQue voulez vous faire ?")

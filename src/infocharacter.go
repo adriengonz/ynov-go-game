@@ -13,6 +13,7 @@ func DisplayInfo(perso *Character, monster *Monster) { // Fonction pour afficher
 	fmt.Println("Sort utilisable :", perso.skill)
 	fmt.Println("Argent :", perso.money)
 	fmt.Println("Equipement :", perso.equipment)
+	fmt.Println("Mana :", perso.mana)
 	fmt.Println("Expérience :", perso.currentExperience, "/100")
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	var userinputinfo int

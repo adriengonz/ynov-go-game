@@ -12,8 +12,9 @@ func AccessInventory(perso *Character, monster *Monster) { // Fonction pour affi
 	fmt.Println(perso.inventory)
 	fmt.Println("Tapez 0 pour revenir au menu précedent")
 	fmt.Println("Tapez 1 pour prendre une potion de soin")
+	fmt.Println("Tapez 2 pour prendre une potion de mana (rajoute 25 de mana)")
 	fmt.Scan(&menuinventory)
-	for menuinventory < 0 || menuinventory > 1 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	for menuinventory < 0 || menuinventory > 2 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
 	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
 	fmt.Scan(&menuinventory)
 }
@@ -23,6 +24,8 @@ func AccessInventory(perso *Character, monster *Monster) { // Fonction pour affi
 		Menu(perso, monster)
 	case 1:
 		TakePot(perso, monster)
+	case 2:
+	TakePotMana(perso, monster)
 	}
 	Menu(perso, monster)
 }
@@ -73,5 +76,28 @@ func UpgradeInventorySlot(perso *Character) { // Fonction qui rajoute des places
 	} else {
 		fmt.Println("Vous ne pouvez pas améliorer plus de 3 fois votre inventaire !")
 		time.Sleep(2 * time.Second)
+	}
+}
+
+func AccessInventoryFight(perso *Character, monster *Monster) { // Fonction qui permet d'accéder a l'inventaire pendant un combat (quelques modifications par rapport a l'accès inventaire classique)
+	menuinventoryfight := 0
+	fmt.Println("Voici votre inventaire")
+	fmt.Println(perso.inventory)
+	fmt.Println("Tapez 0 pour revenir au menu précedent")
+	fmt.Println("Tapez 1 pour prendre une potion de soin")
+	fmt.Println("Tapez 2 pour prendre une potion de soin")
+	fmt.Scan(&menuinventoryfight)
+	for menuinventoryfight < 0 || menuinventoryfight > 2 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
+	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")
+	fmt.Scan(&menuinventoryfight)
+	}
+
+	switch menuinventoryfight {
+	case 0:
+		TrainingFight(perso, monster)
+	case 1:
+		TakePotFight(perso, monster)
+	case 2:
+		TakePotManaFight(perso, monster)
 	}
 }
