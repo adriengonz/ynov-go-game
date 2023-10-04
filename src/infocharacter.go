@@ -4,6 +4,7 @@ import "fmt"
 
 func DisplayInfo(perso *Character, monster *Monster) { // Fonction pour afficher l'interface du joueur
 	Clear()
+	img()
 	fmt.Println("Nom :", perso.name)
 	fmt.Println("Race :", perso.race)
 	fmt.Println("Classe :", perso.class)

@@ -41,6 +41,6 @@ func Menu(persovar *Character, monsterinstance *Monster) { // Fonction qui affic
 	}
 }
 
-func Clear(){
-	fmt.Print("\033[H\033[2J")
+func Clear() {
+	os.Stdout.WriteString("\x1b[3;J\x1b[H\x1b[2J")
 }
