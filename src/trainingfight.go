@@ -19,6 +19,7 @@ func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainemen
 		fmt.Println("\nTour", perso.turn)
 		fmt.Println("Joueur - Points de vie :", perso.currentlife)
 		fmt.Println("Monstre - Points de vie :", monster.currentlife)
+		fmt.Println("----------------------------------------------")
 
 		if initiativeplayer > initiativemonster { // Si l'initiative du joueur est plus grande, le joueur commence (sinon le monstre commence)
 			CharTurn(perso, monster)
@@ -80,6 +81,7 @@ func CharTurn(perso *Character, monster *Monster) { // Fonction qui va être app
 	fmt.Println("\nQue voulez vous faire ?")
 	fmt.Println("1 - attaquer")
 	fmt.Println("2 - inventaire")
+	fmt.Println("-------------------------")
 	fmt.Scan(&attackinput)
 	for attackinput < 0 || attackinput > 2 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
 	fmt.Println("Votre commande n'a pas été reconnue")
@@ -100,6 +102,7 @@ func AttackMenu(perso *Character, monster *Monster) { // Menu qui s'affiche lors
 	fmt.Println("1 - Attaque classique")
 	fmt.Println("2 - Sort")
 	fmt.Println("0 - Retour au menu précédent")
+	fmt.Println("---------------------------------------")
 	fmt.Scan(&attackmenuinput)
 	for attackmenuinput < 0 || attackmenuinput > 2 { // Si l'utilisateur entre un caractère plus petit ou plus grand, une erreur est renvoyée
 	fmt.Println("Votre commande n'a pas été reconnue, tapez 0 pour revenir au menu précédent")

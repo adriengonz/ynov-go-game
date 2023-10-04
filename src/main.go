@@ -34,7 +34,7 @@ func main() { // Fonction pour afficher l'interface du choix de personnage
 }
 
 func img() {
-	filePath := "./img/duel.jpeg"
+	filePath := "./img/fight.jpeg"
 	flags := aic_package.DefaultFlags()
 	flags.Colored = true
 	asciiArt, err := aic_package.Convert(filePath, flags)
