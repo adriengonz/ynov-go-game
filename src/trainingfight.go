@@ -8,7 +8,7 @@ import (
 
 func TrainingFight(perso *Character, monster *Monster) { // Combat d'entrainement
 	Clear()
-	img()
+	img("./img/fight.jpeg")
 	rand.Seed(time.Now().UnixNano()) // Initialiser la génération de nombres aléatoires	
 	initiativeplayer := rand.Intn(100-0)
 	initiativemonster := rand.Intn(100-0)

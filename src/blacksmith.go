@@ -8,7 +8,7 @@ import (
 func Blacksmith(perso *Character, monster *Monster) { // Afficher les options de l'interface forgeron
 	menublacksmith := 0
 	Clear()
-	img()
+	img("./img/blacksmith.png")
 	fmt.Println("Bienvenue chez le forgeron")
 	fmt.Println("1 - Fabriquer un chapeau de l'aventurier (5 pièces d'or, 1 plume de corbeau et 1 cuir de sanglier)")
 	fmt.Println("2 - Fabriquer une tunique de l'aventurier (5 pièces d'or, 2 fourrure de loup et 1 peau de troll)")

@@ -8,6 +8,7 @@ import (
 func AccessInventory(perso *Character, monster *Monster) { // Fonction pour afficher l'interface de l'inventaire
 	menuinventory := 0
 	Clear()
+	img("./img/backpack.png")
 	fmt.Println("Voici votre inventaire")
 	fmt.Println(perso.inventory)
 	fmt.Println("Tapez 0 pour revenir au menu précedent")

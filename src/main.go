@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 	"fmt"
 	"os"
 )
@@ -31,16 +30,4 @@ func main() { // Fonction pour afficher l'interface du choix de personnage
 		os.Exit(0)
 	}
 	Menu(&p1, &m1)
-}
-
-func img() {
-	filePath := "./img/fight.jpeg"
-	flags := aic_package.DefaultFlags()
-	flags.Colored = true
-	asciiArt, err := aic_package.Convert(filePath, flags)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	fmt.Printf("%v\n", asciiArt)
 }
