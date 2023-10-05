@@ -81,7 +81,7 @@ func CheckBlacksmith(perso *Character, monster *Monster, item1 string, moneyneed
 				return false
 			}
 	} else {
-		fmt.Println("Vous n'avez pas de", item1, "dans votre inventaire !")
+		fmt.Println("Vous n'avez pas de", item1, "dans votre inventaire, allez voir le marchant pour avoir les composants requis !")
 		time.Sleep(2 * time.Second)
 		Blacksmith(perso, monster)
 		return false
