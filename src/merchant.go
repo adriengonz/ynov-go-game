@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func Merchant(perso *Character, monster *Monster) { // Afficher les options de l'interface merchant
@@ -28,32 +29,67 @@ func Merchant(perso *Character, monster *Monster) { // Afficher les options de l
 
 	switch menumerchant { // Code pour ajouter l'item dans l'inventaire et retirer l'argent au joueur
 	case 1:
+		if CheckMoney(perso, monster, 3) {
 		AddInventory(perso, "potion de soin")
 		perso.money -= 3
+		} else {
+			fmt.Println("Vous n'avez pas assez d'argent pour acheter cet objet !")
+			time.Sleep(2 * time.Second)
+		}
 		Merchant(perso, monster)
 	case 2:
-		AddInventory(perso, "potion de poison")
-		perso.money -= 7
+		if CheckMoney(perso, monster, 7) {
+			AddInventory(perso, "potion de poison")
+			perso.money -= 7
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argent pour acheter cet objet !")
+				time.Sleep(2 * time.Second)
+			}
 		Merchant(perso, monster)
 	case 3:
-		AddInventory(perso, "potion de mana")
-		perso.money -= 7
+		if CheckMoney(perso, monster, 7) {
+			AddInventory(perso, "potion de mana")
+			perso.money -= 7
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argent pour acheter cet objet !")
+				time.Sleep(2 * time.Second)
+			}
 		Merchant(perso, monster)
 	case 4:
-		AddInventory(perso, "fourrure de loup")
-		perso.money -= 4
+		if CheckMoney(perso, monster, 4) {
+			AddInventory(perso, "fourrure de loup")
+			perso.money -= 4
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argent pour acheter cet objet !")
+				time.Sleep(2 * time.Second)
+			}
 		Merchant(perso, monster)
 	case 5:
-		AddInventory(perso, "peau de troll")
-		perso.money -= 7
+		if CheckMoney(perso, monster, 7) {
+			AddInventory(perso, "peau de troll")
+			perso.money -= 7
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argent pour acheter cet objet !")
+				time.Sleep(2 * time.Second)
+			}
 		Merchant(perso, monster)
 	case 6:
-		AddInventory(perso, "cuir de sanglier")
-		perso.money -= 3
+		if CheckMoney(perso, monster, 3) {
+			AddInventory(perso, "cuir de sanglier")
+			perso.money -= 3
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argent pour acheter cet objet !")
+				time.Sleep(2 * time.Second)
+			}
 		Merchant(perso, monster)
 	case 7:
-		AddInventory(perso, "plume de corbeau")
-		perso.money -= 30
+		if CheckMoney(perso, monster, 30) {
+			AddInventory(perso, "plume de corbeau")
+			perso.money -= 30
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argent pour acheter cet objet !")
+				time.Sleep(2 * time.Second)
+			}
 		Merchant(perso, monster)
 	case 8:
 		Spellbook(perso, "Livre de sort: boule de feu", 25)
@@ -64,10 +100,23 @@ func Merchant(perso *Character, monster *Monster) { // Afficher les options de l
 		perso.money -= 40
 		Merchant(perso, monster)
 	case 10:
-		UpgradeInventorySlot(perso)
-		perso.money -= 30
+		if CheckMoney(perso, monster, 30) {
+			UpgradeInventorySlot(perso)
+			perso.money -= 30
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argent pour acheter cet objet !")
+				time.Sleep(2 * time.Second)
+			}
 		Merchant(perso, monster)
 	case 0:
 		Menu(perso, monster)
+	}
+}
+
+func CheckMoney(perso *Character, monster *Monster, moneyneed int) bool {
+	if perso.money > moneyneed {
+		return true
+	} else { 
+		return false
 	}
 }
